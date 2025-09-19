@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PI Frontend</title>
+    <title>Formulari de contacte</title>
   </head>
   <body>
-    <h1>Bienvenido PI Frontend</h1>
-    <h2>Añado un h2</h2>
+    <h1>Contacta amb nosaltres</h1>
+    <form id="formContacte">
+      <label for="nom">Nom:</label>
+      <input
+        type="text"
+        id="nom"
+        name="nom"
+        required
+        minlength="3"
+      /><br /><br />
+
+      <label for="email">Correu:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="edat">Edat:</label>
+      <input
+        type="number"
+        id="edat"
+        name="edat"
+        min="18"
+        max="99"
+      /><br /><br />
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script src="validacio.js"></script>
   </body>
 </html>
