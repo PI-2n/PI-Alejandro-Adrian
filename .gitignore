@@ -1,0 +1,25 @@
+# ---- Archivos de entorno ----
+.env
+.env.*
+
+# ---- Docker ----
+# Volúmenes y datos de MySQL (persistencia local)
+db_data/
+
+# Logs de contenedores o PHP
+*.log
+
+# ---- Sistema operativo ----
+.DS_Store
+Thumbs.db
+
+# ---- IDE / Editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Archivos temporales ----
+*.tmp
+*.bak
+
