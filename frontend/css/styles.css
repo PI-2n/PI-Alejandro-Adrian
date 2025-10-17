@@ -1,9 +1,23 @@
 .error {
-  color: red;
+    color: red;
 }
+
 .ok {
-  color: green;
+    color: green;
 }
+
 body {
-  font-family: "Inter", sans-serif;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 64px;
+}
+
+h3{
+    font-weight:500;
+    font-size: 36px;
+    margin-bottom: auto;
 }

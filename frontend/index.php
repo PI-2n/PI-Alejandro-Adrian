@@ -22,31 +22,29 @@ unset($_SESSION["errors"], $_SESSION["exito"]);
 
 <body>
   <h1>Contacta amb nosaltres</h1>
-  <form
-    action="../backend/formulario-validacion.php"
-    id="contactForm"
-    method="post">
-    <label for="name">Nom:</label>
-    <input
-      type="text"
-      id="name"
-      name="name"
-      minlength="3" /><br /><br />
+  <form action="../backend/formulario-validacion.php" id="contactForm" method="post">
+    <h3>
+      <label for="name">Nom:</label>
+    </h3>
+    <input type="text" id="name" name="name" minlength="3" placeholder="Pedro"/>
 
-    <label for="email">Correu:</label>
-    <input type="email" id="email" name="email" /><br /><br />
+    <h3>
+      <label for="email">Correu:</label>
+    </h3>
+    <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com"/>
 
-    <label for="age">Edat:</label>
-    <input type="number" id="age" name="age" min="18" max="99" /><br /><br />
-    <label for="phone">Teléfono:</label>
-    <input
-      type="tel"
-      id="phone"
-      name="phone"
-      pattern="[0-9]{9}"
-      placeholder="Ex: 600123456" /><br /><br />
+    <h3>
+      <label for="age">Edat:</label>
+    </h3>
+    <input type="number" id="age" name="age" min="18" max="99" />
+
+    <h3>
+      <label for="phone">Teléfono:</label>
+    </h3>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" placeholder="600123456" /><br><br>
+
     <input type="checkbox" id="dataConsent" name="dataConsent" />
-    <label for="dataConsent">Consentimiento de datos</label><br /><br />
+    <label for="dataConsent">Consentimiento de datos</label> <br><br>
 
     <button type="submit">Enviar</button>
     <button type="reset">Eliminar datos</button>
