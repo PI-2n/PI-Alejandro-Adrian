@@ -16,8 +16,7 @@ La estructura de carpetas del proyecto es la siguiente:
 │ └── sprints/  
 └── frontend/  
 ├── css/  
-└── js/  
-
+└── js/
 
 Se ha instalado y configurado **MkDocs** junto con el tema **Material for MkDocs**, lo que permitirá generar documentación técnica clara y profesional.  
 Además, se ha preparado un entorno **Docker** para ejecutar y probar código PHP de forma aislada y reproducible.
@@ -28,8 +27,8 @@ Además, se ha preparado un entorno **Docker** para ejecutar y probar código PH
 
 Para la gestión del código y la documentación, se ha creado una **organización en GitHub** llamada **PI-2n**, dentro de la cual se aloja el repositorio principal del proyecto:
 
-- **Repositorio principal:** [`PI-Alejandro-Adrian`](https://github.com/PI-2n/PI-Alejandro-Adrian)  
-- **Proyecto general:** *Project Proyecto Intermodular*, donde se centraliza la planificación y seguimiento del progreso.
+- **Repositorio principal:** [`PI-Alejandro-Adrian`](https://github.com/PI-2n/PI-Alejandro-Adrian)
+- **Proyecto general:** [`Proyect Proyecto intermodular`](https://github.com/orgs/PI-2n/projects/1), donde se centraliza la planificación y seguimiento del progreso.
 
 Esta estructura facilita la colaboración entre los integrantes del equipo y el control de versiones mediante Git.
 
@@ -38,7 +37,8 @@ Esta estructura facilita la colaboración entre los integrantes del equipo y el 
 ## 📅 Diagrama de Gantt y planificación
 
 El **Diagrama de Gantt** se ha desarrollado con la herramienta **GanttProject**, permitiendo visualizar las fases, dependencias y duración estimada de las tareas.  
-El proyecto ha sido compartido en la nube de GanttProject para que ambos integrantes del grupo puedan acceder y modificarlo en tiempo real.
+El proyecto ha sido compartido en la nube de GanttProject para que ambos integrantes del grupo puedan acceder y modificarlo en tiempo real.  
+--> [Ver diagrama](../diagrama_gantt.pdf)
 
 ---
 
@@ -46,7 +46,7 @@ El proyecto ha sido compartido en la nube de GanttProject para que ambos integra
 
 La **distribución de tareas** se ha realizado en dos niveles:
 
-1. **GitHub Projects**, donde se ha creado un tablero Kanban para la gestión ágil del trabajo (To Do / In Progress / Done).  
+1. **GitHub Projects**, donde se ha creado un tablero Kanban para la gestión ágil del trabajo (To Do / In Progress / Done).
 2. **GanttProject**, para visualizar la planificación temporal y las dependencias entre tareas.
 
 De esta forma se combina la visión estratégica (cronograma) con la operativa (seguimiento de tareas).
@@ -72,7 +72,7 @@ En futuras iteraciones se añadirá validación dinámica con **JavaScript** par
 
 ## ⚠️ Plan de riesgos laborales
 
-Finalmente, se ha elaborado la documentación relativa a la **prevención de riesgos laborales**, tomando como base los materiales de la asignatura de *IPE* del curso anterior.  
+Finalmente, se ha elaborado la documentación relativa a la **prevención de riesgos laborales**, tomando como base los materiales de la asignatura de _IPE_ del curso anterior.
 
 Se han generado los siguientes documentos, disponibles en la sección correspondiente:
 

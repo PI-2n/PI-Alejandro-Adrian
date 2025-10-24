@@ -3,9 +3,9 @@ site_url: https://pi-2n.github.io/PI-Alejandro-Adrian/
 use_directory_urls: false
 
 nav:
-  - "Inicio": "index.md"
+  - "1️⃣ Inicio": "index.md"
 
-  - "Sprints":
+  - "2️⃣ Sprints":
       - "Sprint 1": "sprints/sprint1.md"
       - "Sprint 2": "sprints/sprint2.md"
       - "Sprint 3": "sprints/sprint3.md"
@@ -13,9 +13,7 @@ nav:
       - "Sprint 5": "sprints/sprint5.md"
       - "Sprint 6": "sprints/sprint6.md"
 
-  - "Riesgos laborals":
-      - "Riscos individuals": "riesgos/riesgos_individuales.md"
-      - "Pla general de riscos": "riesgos/prevencion_riesgos.md"
+
 
 theme:
   language: es
