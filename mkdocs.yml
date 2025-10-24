@@ -2,26 +2,35 @@ site_name: Projecte Intermodular 2DAW
 site_url: https://pi-2n.github.io/PI-Alejandro-Adrian/
 use_directory_urls: false
 
-
 nav:
-  - "Inici": "index.md"
-  - "Riesgos laborales": "riscos_individuals.md"
-  - "Prevención de riesgos": "RISKS.md"
- # - Segundo apartado del menú lateral
+  - "Inicio": "index.md"
+
+  - "Sprints":
+      - "Sprint 1": "sprints/sprint1.md"
+      - "Sprint 2": "sprints/sprint2.md"
+      - "Sprint 3": "sprints/sprint3.md"
+      - "Sprint 4": "sprints/sprint4.md"
+      - "Sprint 5": "sprints/sprint5.md"
+      - "Sprint 6": "sprints/sprint6.md"
+
+  - "Riesgos laborals":
+      - "Riscos individuals": "riesgos/riesgos_individuales.md"
+      - "Pla general de riscos": "riesgos/prevencion_riesgos.md"
+
 theme:
-  language: ca
+  language: es
   favicon: imagenes/favicon.png
   name: "material"
   palette:
     - scheme: default
       primary: light blue
-      accent: "Teal"
+      accent: Teal
       toggle:
         icon: material/toggle-switch-off-outline
         name: Canviar a mode nit
-    - scheme: slate 
+    - scheme: slate
       primary: light blue
-      accent: "Teal"
+      accent: Teal
       toggle:
         icon: material/toggle-switch
         name: Canviar a mode dia
@@ -33,8 +42,6 @@ theme:
     - header.autohide
     - toc.integrate
     - content.tabs.link
-    # - navigation.tabs
-    # - navigation.top
 
 extra:
   search:

@@ -1,17 +1,20 @@
-## 🖥️ 1. Esto es un ejemplo de Documentación Mark Down
+# 📋 Resumen del proyecto
 
-### 1️⃣ Explicació
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. **No sólo sobrevivió 500 años**, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+Este es el proyecto integrador de Alejandro Rico Sánchez y Adrián Gutiérrez Galvañ en el que haremos un e-commerce dedicado a la venta de claves digitales de videojuegos para diferentes plataformas y software para pc.
 
-### 2️⃣ Objectiu
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+A continuación se muestra un resumen de las tareas realizadas en cada Sprint para poder llevar un seguimiento global del estado del proyecto de forma clara y sencilla:
 
-### 3️⃣ Passos guiats
-1. 🖥️ Obrir Visual Studio Code i el terminal integrat (`Ctrl+ñ`).
-2. 📦 Comprovar que Git està instal·lat:
+## 🏁 [Sprint 1 (19/09/2025 - 24/10/2025)](sprints/sprint1.md)
+- Preparación del entorno de trabajo
+- Configuración del repositorio local y en la nube
+- Creación del diagrama de Gantt
+- Repartición de tareas
+- Documentación
+- Diseño del formulario
+- Elaboración del plan de riesgos laborales y prevención
 
-    ```bash
-    Así se implementa el código
-    ```
+## 🚀 Sprint 2
+_Pendiente de completar..._
 
-
+## 📈 Sprint 3
+_Pendiente de completar..._

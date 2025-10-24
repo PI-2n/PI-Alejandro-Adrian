@@ -2,14 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/index.html</loc>
-         <lastmod>2025-10-17</lastmod>
+         <lastmod>2025-10-24</lastmod>
     </url>
     <url>
-         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/RISKS.html</loc>
-         <lastmod>2025-10-17</lastmod>
+         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/riesgos/prevencion_riesgos.html</loc>
+         <lastmod>2025-10-24</lastmod>
     </url>
     <url>
-         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/riscos_individuals.html</loc>
-         <lastmod>2025-10-17</lastmod>
+         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/riesgos/riesgos_individuales.html</loc>
+         <lastmod>2025-10-24</lastmod>
+    </url>
+    <url>
+         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/sprints/sprint1.html</loc>
+         <lastmod>2025-10-24</lastmod>
+    </url>
+    <url>
+         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/sprints/sprint2.html</loc>
+         <lastmod>2025-10-24</lastmod>
+    </url>
+    <url>
+         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/sprints/sprint3.html</loc>
+         <lastmod>2025-10-24</lastmod>
+    </url>
+    <url>
+         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/sprints/sprint4.html</loc>
+         <lastmod>2025-10-24</lastmod>
+    </url>
+    <url>
+         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/sprints/sprint5.html</loc>
+         <lastmod>2025-10-24</lastmod>
+    </url>
+    <url>
+         <loc>https://pi-2n.github.io/PI-Alejandro-Adrian/sprints/sprint6.html</loc>
+         <lastmod>2025-10-24</lastmod>
     </url>
 </urlset>
