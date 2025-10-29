@@ -24,7 +24,8 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%; /* se asegura que ocupe todo el ancho disponible */
-  margin-right: 20px; /* si quieres mantener margen lateral extra */
+  margin-right: 30px; /* si quieres mantener margen lateral extra */
+  margin-left: 30px;
 }
 
 .search-form {
@@ -39,6 +40,7 @@ header {
   width: 50vw;
   outline: none;
   border: none;
+  background-color: #363636;
 }
 
 .search-btn {
@@ -64,9 +66,13 @@ header {
 
 .header_btn-container {
   display: flex;
-  gap: 450px;
-  margin-left: auto;
-  width: auto;
+  gap: 20px;
+}
+
+.separator {
+  width: 1px;
+  background-color: #ffffff50; /* barra blanca semitransparente */
+  height: 30px; /* altura de la barra, ajusta según tus botones */
 }
 
 .search-btn {
@@ -85,7 +91,7 @@ header {
 
 .platform-btn {
   height: 30px;
-  width: auto;
+  width: auto;  
 }
 
 .user-btn-container {
