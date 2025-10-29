@@ -175,22 +175,21 @@ header {
   border-bottom: 1px solid #333;
 }
 
-.product a .title,
-.product a .price {
-  font-size: 1rem;
+.product-text {
+  display: flex;
+  justify-content: space-between; /* título a la izquierda, precio a la derecha */
+  align-items: center;
   margin: 0.5rem 1rem;
 }
 
-.product a .title {
+.product-text .title {
   font-weight: 500;
-  text-align: left;
 }
 
-.product a .price {
+.product-text .price {
   font-weight: 600;
-  text-align: right;
-  margin-top: -1.5rem;
 }
+
 
 .offers {
   background-color: #181818;
