@@ -9,28 +9,29 @@ header {
   width: 100%;
   background-color: #000000;
   color: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.header_image {
+  float: left;
 }
 
 .header_image img {
-  height: 50px;
+  height: 60px;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 .header_searchBar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%; /* se asegura que ocupe todo el ancho disponible */
-  margin-right: 30px; /* si quieres mantener margen lateral extra */
-  margin-left: 30px;
+  float: left;
+  width: calc(90% - 400px);
+  margin: 0 30px;
+  text-align: center;
 }
 
 .search-form {
-  display: flex;
-  align-items: center;
+  display: inline-block;
   position: relative;
 }
 
@@ -50,56 +51,44 @@ header {
   cursor: pointer;
   position: absolute;
   right: 10px;
+  top: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   padding: 0;
 }
 
-/* La imagen de la lupa se adapta al alto del input */
 .search-btn img {
-  height: 60%;
+  height: 40%;
   width: auto;
-  max-height: 20px; /* evita que sea más grande que la barra */
+  max-height: 20px;
   object-fit: contain;
 }
 
 .header_btn-container {
-  display: flex;
-  gap: 20px;
-}
-
-.separator {
-  width: 1px;
-  background-color: #ffffff50; /* barra blanca semitransparente */
-  height: 30px; /* altura de la barra, ajusta según tus botones */
-}
-
-.search-btn {
-  padding: 5px 10px;
-  border-left: none;
-  color: #fff;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
+  float: right;
+  padding-right: 20px;
 }
 
 .platform-btn-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  float: left;
+  margin-right: 10px;
+}
+
+.user-btn-container {
+  float: left;
+}
+
+.platform-btn-container a,
+.user-btn-container a {
+  display: inline-block;
+  margin: 0 5px;
 }
 
 .platform-btn {
   height: 30px;
   width: auto;
-}
-
-.user-btn-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: auto;
 }
 
 .user-btn {
@@ -113,15 +102,24 @@ header {
     hue-rotate(358deg) brightness(101%) contrast(93%);
 }
 
-.news {
-  background-color: #181818;
+.news,
+.offers {
   color: white;
   padding: 2rem 0;
   width: 100%;
   overflow: hidden;
 }
 
-.news h2 {
+.news {
+  background-color: #181818;
+}
+
+.offers {
+  background-color: #252525;
+}
+
+.news h2,
+.offers h2 {
   font-size: 1.8rem;
   font-weight: 600;
   margin-left: 2rem;
@@ -129,39 +127,29 @@ header {
 }
 
 .products {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 0 2rem 1rem;
   width: 100%;
+  padding: 0 2rem 1rem;
+  text-align: center;
+  overflow: hidden;
 }
 
 .product {
-  flex: 0 0 calc(22% - 1rem);
+  float: left;
+  width: 22%;
+  margin: 0 5rem 1rem;
   background-color: #202020;
   border-radius: 12px;
   overflow: hidden;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
 }
 
 .product:hover {
-  transform: translateY(-5px);
+  transform: scale(1.1);
 }
 
 .product a {
-  display: flex;
-  flex-direction: column;
+  display: block;
   text-decoration: none;
   color: inherit;
-  height: 100%;
-}
-
-.product a:hover {
-  transform: none;
 }
 
 .product a img {
@@ -174,71 +162,33 @@ header {
 }
 
 .product-text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin: 0.5rem 1rem;
+  overflow: hidden;
 }
 
 .product-text .title {
+  float: left;
   font-weight: 500;
 }
 
 .product-text .price {
+  float: right;
   font-weight: 600;
-}
-
-.offers {
-  background-color: #252525;
-  color: white;
-  padding: 2rem 0;
-  width: 100%;
-  overflow: hidden;
-}
-
-.offers h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-left: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.offers .products {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 0 2rem 1rem;
-  width: 100%;
 }
 
 .offers .product {
-  flex: 0 0 calc(14% - 1rem);
-  background-color: #202020;
-  border-radius: 12px;
-  overflow: hidden;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  width: 14%;
+  margin: 0 2rem 1rem;
 }
 
 .offers .product a img {
-  width: 100%;
-  height: auto;
   aspect-ratio: 3 / 3.25;
   object-fit: fill;
-  display: block;
-  border-bottom: 1px solid #333;
 }
 
 .offers .product-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  gap: 5px;
+  margin: 0.5rem 1rem;
 }
 
 footer {
@@ -248,4 +198,5 @@ footer {
   text-align: center;
   padding: 15px 0;
   font-size: 14px;
+  clear: both;
 }
