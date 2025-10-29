@@ -60,8 +60,6 @@ header {
 .search-btn img {
   height: 40%;
   width: auto;
-  max-height: 20px;
-  object-fit: contain;
 }
 
 .header_btn-container {
