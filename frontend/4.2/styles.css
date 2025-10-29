@@ -37,10 +37,11 @@ header {
 .search-input {
   padding: 8px 40px 8px 15px;
   border-radius: 20px;
-  width: 50vw;
+  width: 60vw;
   outline: none;
   border: none;
   background-color: #363636;
+  max-width: 75vw;
 }
 
 .search-btn {
@@ -91,7 +92,7 @@ header {
 
 .platform-btn {
   height: 30px;
-  width: auto;  
+  width: auto;
 }
 
 .user-btn-container {
@@ -104,6 +105,12 @@ header {
 .user-btn {
   height: 30px;
   width: auto;
+}
+
+.platform-btn:hover,
+.user-btn:hover {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%)
+    hue-rotate(358deg) brightness(101%) contrast(93%);
 }
 
 .news {
@@ -128,15 +135,6 @@ header {
   gap: 1.5rem;
   padding: 0 2rem 1rem;
   width: 100%;
-}
-
-.products::-webkit-scrollbar {
-  height: 8px;
-}
-
-.products::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
 }
 
 .product {
@@ -177,7 +175,7 @@ header {
 
 .product-text {
   display: flex;
-  justify-content: space-between; /* título a la izquierda, precio a la derecha */
+  justify-content: space-between;
   align-items: center;
   margin: 0.5rem 1rem;
 }
@@ -190,10 +188,57 @@ header {
   font-weight: 600;
 }
 
-
 .offers {
-  background-color: #181818;
+  background-color: #252525;
   color: white;
+  padding: 2rem 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.offers h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.offers .products {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 0 2rem 1rem;
+  width: 100%;
+}
+
+.offers .product {
+  flex: 0 0 calc(14% - 1rem);
+  background-color: #202020;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.offers .product a img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 3.25;
+  object-fit: fill;
+  display: block;
+  border-bottom: 1px solid #333;
+}
+
+.offers .product-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
 }
 
 footer {
