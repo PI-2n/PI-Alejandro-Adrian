@@ -187,8 +187,24 @@ header {
 }
 
 .offers .product-text {
+  width: 100%;
+  overflow: hidden;
   text-align: center;
-  margin: 0.5rem 1rem;
+}
+
+.offers .product-text .title {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.offers .product-text .price {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
 }
 
 footer {
