@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
@@ -39,7 +38,6 @@ header {
   padding: 8px 40px 8px 15px;
   border-radius: 20px;
   width: 60vw;
-  outline: none;
   border: none;
   background-color: #363636;
   max-width: 75vw;
