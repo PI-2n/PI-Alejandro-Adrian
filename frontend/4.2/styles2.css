@@ -87,21 +87,12 @@ header {
     hue-rotate(358deg) brightness(101%) contrast(93%);
 }
 
-/* --- MAIN --- */
-main {
-  display: grid;
-  grid-template-rows: auto auto;
-  gap: clamp(1rem, 2vw, 2rem);
-  background-color: #181818;
-}
-
 /* SECCIONES */
 .news,
 .offers {
   display: grid;
-  grid-template-rows: auto 1fr;
   gap: clamp(1rem, 2vw, 2rem);
-  padding: clamp(1rem, 2vw, 2rem);
+  padding: 2% 5% 5%; 
   color: white;
 }
 
@@ -115,8 +106,8 @@ main {
 
 .news h2,
 .offers h2 {
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  font-weight: 600;
+  font-size: 48px;
+  font-weight: 600;  
 }
 
 /* CONTENEDOR DE PRODUCTOS --- USANDO GRID */
@@ -126,8 +117,15 @@ main {
     auto-fit,
     minmax(clamp(180px, 20vw, 250px), 1fr)
   );
-  gap: clamp(1rem, 2vw, 2rem);
   justify-items: center;
+}
+
+.news .products {
+  gap: 10%;
+}
+
+.offers .products {
+  gap: 3%;
 }
 
 /* PRODUCTOS */
@@ -161,11 +159,11 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .product-text .price {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* OFERTAS: IMAGENES CUADRADAS Y TEXTO CENTRADO */
@@ -187,5 +185,5 @@ footer {
   color: #fff;
   text-align: center;
   padding: clamp(0.5rem, 2vw, 1rem);
-  font-size: clamp(12px, 1vw, 14px);
+  font-size: 16px;
 }
