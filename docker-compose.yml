@@ -1,13 +1,11 @@
-version: "3.8"
-
 services:
   nginx:
     image: nginx:stable-alpine
     container_name: pi_nginx
     ports:
-      - "8080:80"                            # frontend accesible en http://localhost:8080
+      - "8080:80"
     volumes:
-      - ./frontend:/usr/share/nginx/html:ro  # sirve los archivos estáticos
+      - ./public:/usr/share/nginx/html:ro
       - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - php
@@ -16,11 +14,13 @@ services:
 
   php:
     build:
-      context: ./.docker/php
-      dockerfile: Dockerfile
+      context: ./ 
+      dockerfile: ./.docker/php/Dockerfile
     container_name: pi_php
     volumes:
-      - ./backend:/var/www/html              # tu código PHP
+      - ./backend:/var/www/html
+      - ./uploads:/var/www/uploads
+      - ./data:/var/www/data
     environment:
       - DB_HOST=db
       - DB_NAME=pi_db
@@ -43,7 +43,19 @@ services:
       - MYSQL_PASSWORD=pi_password
     volumes:
       - db_data:/var/lib/mysql
-      - ./database:/docker-entrypoint-initdb.d # scripts .sql para inicializar
+      - ./database:/docker-entrypoint-initdb.d
+    networks:
+      - pi_network
+
+  json-server:
+    image: node:20-alpine
+    container_name: pi_json
+    working_dir: /data
+    volumes:
+      - ./data:/data
+    command: npx json-server --watch products.json --host 0.0.0.0 --port 3000
+    ports:
+      - "3000:3000"
     networks:
       - pi_network
 
@@ -53,4 +65,3 @@ volumes:
 networks:
   pi_network:
     driver: bridge
-

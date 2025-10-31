@@ -23,3 +23,17 @@ Thumbs.db
 *.tmp
 *.bak
 
+# ---- Composer ----
+/backend/vendor/
+/backend/composer.lock
+
+# ---- json-server ----
+/data/products.json
+
+# ---- PHPStorm / JetBrains ----
+.idea/
+*.iml
+
+# ---- Node / npm ----
+node_modules/
+package-lock.json

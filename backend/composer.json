@@ -1,0 +1,11 @@
+{
+    "name": "aleadri/pi-backend",
+    "autoload": {
+        "psr-4": {
+            "Aleadri\\PiBackend\\": "src/"
+        }
+    },
+    "require": {
+        "phpoffice/phpspreadsheet": "^5.2"
+    }
+}
