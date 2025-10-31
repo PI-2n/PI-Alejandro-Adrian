@@ -1,83 +1,84 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
+/* --- HEADER --- */
 header {
   display: grid;
-  grid-template-columns: auto 1fr auto; /* Logo | Buscador | Botones */
+  grid-template-areas: "logo search buttons";
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
+  width: 100%;
+  padding: 20px 2rem;
   background-color: #000;
+  gap: clamp(1rem, 2vw, 2rem);
 }
 
-/* Logo */
+.header_image {
+  grid-area: logo;
+}
+
 .header_image img {
-  height: 60px;
+  height: clamp(40px, 5vw, 60px);
 }
 
-/* Buscador */
 .header_searchBar {
-  display: grid;
+  grid-area: search;
+  display: flex;
+  justify-content: center;
 }
 
 .search-form {
-  display: grid;
-  grid-template-columns: 1fr auto; /* Input | Botón */
-  align-items: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 75vw;
   position: relative;
 }
 
 .search-input {
-  padding: 8px 40px 8px 15px; /* espacio a la derecha para el botón */
-  border-radius: 20px;
+  width: 100%;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  border-radius: clamp(10px, 2vw, 20px);
   border: none;
   background-color: #363636;
-  color: #fff;
-  width: 100%;
 }
 
 .search-btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
-  display: grid;
-  place-items: center;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-btn img {
-  height: 40%;
-  width: auto;
+  height: clamp(20px, 3vw, 20px);
 }
 
-.separator {
-  width: 1px;
-  background-color: #ffffff80;
-}
-
+/* Botones de plataformas y usuario */
 .header_btn-container {
-  display: grid;
-  grid-template-columns: repeat(2, auto); /* fila plataformas + fila usuario */
-  gap: 15px;
+  grid-area: buttons;
+  display: flex;
+  gap: clamp(0.5rem, 1vw, 1rem);
 }
 
 .platform-btn-container,
 .user-btn-container {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 15px;
+  display: flex;
+  gap: clamp(0.5rem, 1vw, 1rem);
 }
 
 .platform-btn,
 .user-btn {
-  height: 30px;
+  height: clamp(20px, 3vw, 30px);
   width: auto;
-  cursor: pointer;
 }
 
 .platform-btn:hover,
@@ -86,13 +87,22 @@ header {
     hue-rotate(358deg) brightness(101%) contrast(93%);
 }
 
+/* --- MAIN --- */
+main {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: clamp(1rem, 2vw, 2rem);
+  background-color: #181818;
+}
 
+/* SECCIONES */
 .news,
 .offers {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(1rem, 2vw, 2rem);
+  padding: clamp(1rem, 2vw, 2rem);
   color: white;
-  padding: 2rem 0;
-  width: 100%;
-  overflow: hidden;
 }
 
 .news {
@@ -105,30 +115,31 @@ header {
 
 .news h2,
 .offers h2 {
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
   font-weight: 600;
-  margin-left: 2rem;
-  margin-bottom: 1.5rem;
 }
 
+/* CONTENEDOR DE PRODUCTOS --- USANDO GRID */
 .products {
-  width: 100%;
-  padding: 0 2rem 1rem;
-  text-align: center;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(180px, 20vw, 250px), 1fr)
+  );
+  gap: clamp(1rem, 2vw, 2rem);
+  justify-items: center;
 }
 
+/* PRODUCTOS */
 .product {
-  float: left;
-  width: 22%;
-  margin: 0 5rem 1rem;
   background-color: #202020;
   border-radius: 12px;
   overflow: hidden;
+  transition: transform 0.3s;
 }
 
 .product:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .product a {
@@ -141,63 +152,40 @@ header {
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 4;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
   border-bottom: 1px solid #333;
 }
 
 .product-text {
-  margin: 0.5rem 1rem;
-  overflow: hidden;
-}
-
-.product-text .title {
-  float: left;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
   font-weight: 500;
 }
 
 .product-text .price {
-  float: right;
   font-weight: 600;
 }
 
-.offers .product {
-  width: 14%;
-  margin: 0 2rem 1rem;
-}
-
+/* OFERTAS: IMAGENES CUADRADAS Y TEXTO CENTRADO */
 .offers .product a img {
   aspect-ratio: 3 / 3.25;
   object-fit: fill;
 }
 
 .offers .product-text {
-  width: 100%;
-  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-.offers .product-text .title {
-  float: left;
-  width: 100%;
-  text-align: center;
-  font-weight: 500;
-  margin-bottom: 0.3rem;
-}
-
-.offers .product-text .price {
-  float: left;
-  width: 100%;
-  text-align: center;
-  font-weight: 600;
-}
-
+/* --- FOOTER --- */
 footer {
   width: 100%;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000;
+  color: #fff;
   text-align: center;
-  padding: 15px 0;
-  font-size: 14px;
-  clear: both;
+  padding: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(12px, 1vw, 14px);
 }
