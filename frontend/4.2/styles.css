@@ -151,7 +151,7 @@ header {
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 4;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
   border-bottom: 1px solid #333;
 }
