@@ -17,6 +17,7 @@ header {
   gap: clamp(1rem, 2vw, 2rem);
 }
 
+/* LOGO */
 .header_image {
   grid-area: logo;
 }
@@ -25,53 +26,61 @@ header {
   height: clamp(40px, 5vw, 60px);
 }
 
+/* BARRA DE BÚSQUEDA */
 .header_searchBar {
   grid-area: search;
-  display: flex;
-  justify-content: center;
+  display: grid;
 }
 
 .search-form {
-  width: 100%;
-  max-width: 75vw;
-  position: relative;
+  display: grid;
 }
 
+/* Input y botón dentro del grid */
 .search-input {
-  width: 100%;
   padding: 0.5rem 3rem 0.5rem 1rem;
   border-radius: clamp(10px, 2vw, 20px);
   border: none;
   background-color: #363636;
+  grid-area: 1 / 1 / 2 / 2; /* se superponen */
 }
 
 .search-btn {
   background: none;
   border: none;
   cursor: pointer;
-  position: absolute;
-  right: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: end;
+  margin-right: 0.5rem;
+  display: grid;
+  place-items: center;
 }
 
 .search-btn img {
   height: clamp(20px, 3vw, 20px);
 }
 
-/* Botones de plataformas y usuario */
+/* BOTONES DE PLATAFORMAS Y USUARIO */
 .header_btn-container {
   grid-area: buttons;
-  display: flex;
-  gap: clamp(0.5rem, 1vw, 1rem);
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: clamp(1rem, 1vw, 2rem);
 }
+
+.separator {
+  width: 1.5px;
+  height: 28px;
+  background-color: #777777;
+}
+
 
 .platform-btn-container,
 .user-btn-container {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
   gap: clamp(0.5rem, 1vw, 1rem);
 }
 
@@ -79,6 +88,7 @@ header {
 .user-btn {
   height: clamp(20px, 3vw, 30px);
   width: auto;
+  justify-self: center;
 }
 
 .platform-btn:hover,
@@ -87,12 +97,12 @@ header {
     hue-rotate(358deg) brightness(101%) contrast(93%);
 }
 
-/* SECCIONES */
+/* --- SECCIONES --- */
 .news,
 .offers {
   display: grid;
   gap: clamp(1rem, 2vw, 2rem);
-  padding: 2% 5% 5%; 
+  padding: 2% 7% 5%;
   color: white;
 }
 
@@ -107,10 +117,11 @@ header {
 .news h2,
 .offers h2 {
   font-size: 48px;
-  font-weight: 600;  
+  font-weight: 600;
+  margin-left: -5%;
 }
 
-/* CONTENEDOR DE PRODUCTOS --- USANDO GRID */
+/* CONTENEDOR DE PRODUCTOS */
 .products {
   display: grid;
   grid-template-columns: repeat(
@@ -130,6 +141,7 @@ header {
 
 /* PRODUCTOS */
 .product {
+  display: grid;
   background-color: #202020;
   border-radius: 12px;
   overflow: hidden;
@@ -141,29 +153,30 @@ header {
 }
 
 .product a {
-  display: block;
+  display: grid;
   text-decoration: none;
   color: inherit;
+  grid-template-rows: auto auto;
 }
 
 .product a img {
   width: 100%;
-  height: auto;
   aspect-ratio: 3 / 4;
   object-fit: fill;
-  display: block;
   border-bottom: 1px solid #333;
 }
 
 .product-text {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   padding: 0.5rem 1rem;
   font-weight: 400;
+  align-items: center;
 }
 
 .product-text .price {
   font-weight: 700;
+  justify-self: end;
 }
 
 /* OFERTAS: IMAGENES CUADRADAS Y TEXTO CENTRADO */
@@ -173,8 +186,8 @@ header {
 }
 
 .offers .product-text {
-  flex-direction: column;
-  align-items: center;
+  grid-template-columns: 1fr;
+  justify-items: center;
   text-align: center;
 }
 
