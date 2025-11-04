@@ -5,14 +5,13 @@
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
-/* --- HEADER --- */
+/*  HEADER  */
 header {
   display: grid;
   grid-template-areas: "logo search buttons";
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  width: 100%;
-  padding: 20px 2rem;
+  padding: 20px;
   background-color: #000;
   gap: clamp(1rem, 2vw, 2rem);
 }
@@ -23,26 +22,24 @@ header {
 }
 
 .header_image img {
-  height: clamp(40px, 5vw, 60px);
+  height: clamp(40px, 3vw, 60px);
 }
 
 /* BARRA DE BÚSQUEDA */
 .header_searchBar {
   grid-area: search;
-  display: grid;
 }
 
 .search-form {
   display: grid;
 }
 
-/* Input y botón dentro del grid */
 .search-input {
   padding: 0.5rem 3rem 0.5rem 1rem;
   border-radius: clamp(10px, 2vw, 20px);
   border: none;
   background-color: #363636;
-  grid-area: 1 / 1 / 2 / 2; /* se superponen */
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .search-btn {
@@ -65,7 +62,6 @@ header {
   grid-area: buttons;
   display: grid;
   grid-auto-flow: column;
-  align-items: center;
   gap: clamp(1rem, 1vw, 2rem);
 }
 
@@ -75,12 +71,10 @@ header {
   background-color: #777777;
 }
 
-
 .platform-btn-container,
 .user-btn-container {
   display: grid;
   grid-auto-flow: column;
-  align-items: center;
   gap: clamp(0.5rem, 1vw, 1rem);
 }
 
@@ -88,16 +82,14 @@ header {
 .user-btn {
   height: clamp(20px, 3vw, 30px);
   width: auto;
-  justify-self: center;
 }
 
 .platform-btn:hover,
 .user-btn:hover {
-  filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%)
-    hue-rotate(358deg) brightness(101%) contrast(93%);
+  filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%) hue-rotate(358deg) brightness(101%) contrast(93%);
 }
 
-/* --- SECCIONES --- */
+/* SECCIONES */
 .news,
 .offers {
   display: grid;
@@ -121,27 +113,23 @@ header {
   margin-left: -5%;
 }
 
-/* CONTENEDOR DE PRODUCTOS */
+/* PRODUCTOS */
 .products {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(clamp(180px, 20vw, 250px), 1fr)
-  );
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit,
+      minmax(clamp(180px, 20vw, 250px), 1fr));
 }
 
 .news .products {
-  gap: 10%;
+  gap: clamp(1rem, 8vw, 10rem);
 }
 
 .offers .products {
-  gap: 3%;
+  gap: clamp(1rem, 3vw, 3rem)
 }
 
-/* PRODUCTOS */
+/* PRODUCTO INDIVIDUAL */
 .product {
-  display: grid;
   background-color: #202020;
   border-radius: 12px;
   overflow: hidden;
@@ -153,10 +141,8 @@ header {
 }
 
 .product a {
-  display: grid;
   text-decoration: none;
   color: inherit;
-  grid-template-rows: auto auto;
 }
 
 .product a img {
@@ -176,10 +162,9 @@ header {
 
 .product-text .price {
   font-weight: 700;
-  justify-self: end;
 }
 
-/* OFERTAS: IMAGENES CUADRADAS Y TEXTO CENTRADO */
+/* PRODUCTO INDIVIDUAL (OFERTAS)  */
 .offers .product a img {
   aspect-ratio: 3 / 3.25;
   object-fit: fill;
@@ -187,11 +172,10 @@ header {
 
 .offers .product-text {
   grid-template-columns: 1fr;
-  justify-items: center;
   text-align: center;
 }
 
-/* --- FOOTER --- */
+/* FOOTER */
 footer {
   width: 100%;
   background-color: #000;
