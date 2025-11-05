@@ -116,16 +116,18 @@ header {
 /* PRODUCTOS */
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit,
-      minmax(clamp(180px, 20vw, 250px), 1fr));
 }
 
 .news .products {
   gap: clamp(1rem, 8vw, 10rem);
+  grid-template-columns: repeat(auto-fit,
+      minmax(clamp(180px, 20vw, 250px), 1fr));
 }
 
 .offers .products {
-  gap: clamp(1rem, 3vw, 3rem)
+  gap: clamp(1rem, 3vw, 3rem);
+  grid-template-columns: repeat(auto-fit,
+      minmax(clamp(100px, 10vw, 250px), 1fr));
 }
 
 /* PRODUCTO INDIVIDUAL */
