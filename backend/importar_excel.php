@@ -3,7 +3,7 @@ require __DIR__ . '/vendor/autoload.php'; // Composer autoload
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-// Configuración MySQL
+// Configuración MySQL (opcional: se usa solo si quieres respaldo temporal)
 $host = 'db';
 $dbname = 'pi_db';
 $user = 'pi_user';
@@ -13,7 +13,7 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Crear tabla si no existe
+    // Crear tabla si no existe (opcional)
     $createTableSQL = "
         CREATE TABLE IF NOT EXISTS products (
             id INT PRIMARY KEY,
@@ -31,25 +31,25 @@ try {
     $pdo->exec("TRUNCATE TABLE products");
 
 } catch (PDOException $e) {
-    die("Error de conexión a la base de datos: " . $e->getMessage());
+    die("❌ Error de conexión a la base de datos: " . $e->getMessage());
 }
 
 // Ruta al archivo Excel
-$archivoExcel = __DIR__ . '/../uploads/productes.xlsx';
+$excelPath = __DIR__ . '/../uploads/productes.xlsx';
 
-if (!file_exists($archivoExcel)) {
-    die("Archivo Excel no encontrado en uploads/productes.xlsx\n");
+if (!file_exists($excelPath)) {
+    die("❌ Archivo Excel no encontrado en uploads/productes.xlsx\n");
 }
 
 // Cargar Excel
-$spreadsheet = IOFactory::load($archivoExcel);
+$spreadsheet = IOFactory::load($excelPath);
 $sheet = $spreadsheet->getActiveSheet();
 $rows = $sheet->toArray();
 
 // Primera fila: encabezados
 $headers = array_map('strtolower', array_map('trim', array_shift($rows)));
 
-// Preparar SQL dinámico con INSERT IGNORE
+// Preparar SQL dinámico
 $columns = implode(',', $headers);
 $placeholders = ':' . implode(',:', $headers);
 $sql = "INSERT IGNORE INTO products ($columns) VALUES ($placeholders)";
@@ -58,11 +58,11 @@ $stmt = $pdo->prepare($sql);
 // Insertar filas válidas
 foreach ($rows as $row) {
     if (count($row) !== count($headers)) {
-        continue; // Ignorar filas incompletas
+        continue;
     }
+
     $data = array_combine($headers, $row);
 
-    // Ignorar si el ID está vacío
     if (empty($data['id'])) {
         continue;
     }
@@ -70,12 +70,27 @@ foreach ($rows as $row) {
     $stmt->execute($data);
 }
 
-// Generar JSON para json-server
+// Obtener datos finales desde la base
 $jsonData = $pdo->query("SELECT * FROM products")->fetchAll(PDO::FETCH_ASSOC);
-$dataDir = __DIR__ . '/../data';
-if (!is_dir($dataDir)) {
-    mkdir($dataDir, 0777, true);
-}
-file_put_contents($dataDir . '/products.json', json_encode(['productes' => $jsonData], JSON_PRETTY_PRINT));
 
-echo "Importación completada correctamente. JSON generado en data/products.json\n";
+// 📂 Ruta al archivo db.json
+$dbFile = __DIR__ . '/../data/db.json';
+
+// Si no existe, crear estructura básica
+if (!file_exists($dbFile)) {
+    $dbContent = ['products' => [], 'usuaris' => []];
+} else {
+    $dbContent = json_decode(file_get_contents($dbFile), true);
+    if ($dbContent === null) {
+        $dbContent = ['products' => [], 'usuaris' => []];
+    }
+}
+
+// Actualizar solo la sección de products
+$dbContent['products'] = $jsonData;
+
+// Guardar de nuevo db.json
+file_put_contents($dbFile, json_encode($dbContent, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+echo "✅ Importación completada correctamente.\n";
+echo "📦 Se han actualizado los productos en data/db.json\n";
