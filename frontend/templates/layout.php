@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= $pageTitle ?? 'PI Project' ?></title>
-    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="stylesheet" href="../frontend/css/styles.css">
 </head>
 
 <body>

@@ -9,7 +9,7 @@ include __DIR__ . '/partials/header.php';
   <p style="color: red;"><?= htmlspecialchars($message) ?></p>
 <?php endif; ?>
 
-<form method="POST" action="/backend/auth/profile.php">
+<form method="POST" action="../../backend/src/auth/profile.php">
   <p><strong>Usuario:</strong> <?= htmlspecialchars($user['nom_usuari']) ?></p>
   <label>Email: <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>"></label><br>
   <label>Nombre: <input type="text" name="first_name" value="<?= htmlspecialchars($user['nom']) ?>"></label><br>

@@ -40,8 +40,8 @@
     },
     {
       "id": 2,
-      "nom_usuari": "marta_89",
-      "contrasenya": "$2y$10$HASHMARTAXIFRAT123...",
+      "nom_usuari": "user",
+      "contrasenya": "1234",
       "email": "marta@example.com",
       "nom": "Marta",
       "cognoms": "López",

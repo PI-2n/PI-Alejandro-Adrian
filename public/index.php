@@ -11,7 +11,7 @@ $isLogged = !empty($userId);
 <head>
     <meta charset="UTF-8">
     <title>PI AlejandoAdrian</title>
-    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="stylesheet" href="../frontend/css/styles.css">
 </head>
 
 <body>
