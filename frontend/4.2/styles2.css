@@ -38,7 +38,7 @@ header {
   padding: 0.5rem 3rem 0.5rem 1rem;
   border-radius: 20px;
   border: none;
-  background-color: #363636;
+  background-color: #333333;
   grid-area: 1 / 1 / 2 / 2;
 }
 
@@ -99,7 +99,7 @@ header {
 }
 
 .news {
-  background-color: #181818;
+  background-color: #1A1A1A;
 }
 
 .offers {
@@ -109,12 +109,12 @@ header {
 h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 600;
-  margin-left: -5%;
+  margin-left: -4vw;
   color: white;
 }
 
 h2.h2news {
-  background-color: #181818;
+  background-color: #1A1A1A;
 }
 
 h2.h2offers {
