@@ -174,10 +174,6 @@ h2.h2offers {
 }
 
 /* PRODUCTO INDIVIDUAL (OFERTAS)  */
-.offers .product a img {
-  aspect-ratio: 3 / 3.25;
-  object-fit: fill;
-}
 
 .offers .product-text {
   grid-template-columns: 1fr;
