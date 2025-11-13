@@ -16,25 +16,25 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const product = document.querySelector("#baldurs-gate");
-      const video = product.querySelector(".product-video");
+      // Selecciona todos los productos
+      const products = document.querySelectorAll(".product");
+      products.forEach((product) => {
+        const video = product.querySelector(".product-video");
+        if (!video) return; // saltar si no tiene video
 
-      product.addEventListener("mouseenter", () => {
-        // Esperar a que termine la transición CSS (0.3s)
-        product.addEventListener("transitionend", function handler(e) {
-          if (e.propertyName === "transform") {
+        product.addEventListener("mouseenter", () => {
+          // Espera 0.3s para dejar que se vea la animación de escala
+          setTimeout(() => {
             product.classList.add("show-video");
             video.currentTime = 0;
             video.play();
-            product.removeEventListener("transitionend", handler);
-          }
+          }, 300);
         });
-      });
-
-      product.addEventListener("mouseleave", () => {
-        product.classList.remove("show-video");
-        video.pause();
-        video.currentTime = 0;
+        product.addEventListener("mouseleave", () => {
+          product.classList.remove("show-video");
+          video.pause();
+          video.currentTime = 0;
+        });
       });
     });
   </script>
@@ -111,7 +111,19 @@
         <div class="products">
           <div class="product">
             <a href="#">
-              <img src="img/silksong.png" alt="Hollow Knight: Silksong" />
+              <div class="media-container">
+                <img
+                  src="img/silksong.png"
+                  alt="Hollow Knight: Silksong"
+                  class="product-image"
+                />
+                <video
+                  src="video/hollow_knight_silksong.mp4"
+                  muted
+                  preload="none"
+                  class="product-video"
+                ></video>
+              </div>
               <div class="product-text">
                 <p class="title">Hollow Knight: Silksong</p>
                 <p class="price">20.00€</p>
@@ -120,7 +132,19 @@
           </div>
           <div class="product">
             <a href="#">
-              <img src="img/celeste.png" alt="Celeste" />
+              <div class="media-container">
+                <img
+                  src="img/celeste.png"
+                  alt="Celeste"
+                  class="product-image"
+                />
+                <video
+                  src="video/celeste.mp4"
+                  muted
+                  preload="none"
+                  class="product-video"
+                ></video>
+              </div>
               <div class="product-text">
                 <p class="title">Celeste</p>
                 <p class="price">20.00€</p>
