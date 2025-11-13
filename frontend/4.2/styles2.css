@@ -200,7 +200,6 @@ footer {
 .product-video {
   width: 100%;
   aspect-ratio: 3 / 4;
-  object-fit: cover;
   display: block;
   object-fit:scale-down;
   transition: opacity 0.3s ease;
@@ -220,5 +219,5 @@ footer {
 }
 
 .product.show-video .product-image {
-  opacity: 0;
+  opacity: 0.3;
 }
