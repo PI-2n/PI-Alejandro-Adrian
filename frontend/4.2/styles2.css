@@ -190,6 +190,8 @@ footer {
   font-size: clamp(0.9rem, 1vw, 1rem);
 }
 
+/* Videos */
+
 .media-container {
   position: relative;
   width: 100%;
@@ -201,7 +203,7 @@ footer {
   width: 100%;
   aspect-ratio: 3 / 4;
   display: block;
-  object-fit:scale-down;
+  object-fit: scale-down;
   transition: opacity 0.3s ease;
 }
 
