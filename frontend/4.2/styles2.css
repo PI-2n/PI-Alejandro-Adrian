@@ -189,3 +189,35 @@ footer {
   padding: clamp(0.5rem, 2vw, 1rem);
   font-size: clamp(0.9rem, 1vw, 1rem);
 }
+
+.media-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-image,
+.product-video {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.product-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  border-bottom: 1px solid #333;
+}
+
+.product.show-video .product-video {
+  opacity: 1;
+}
+
+.product.show-video .product-image {
+  opacity: 0;
+}
