@@ -16,7 +16,10 @@ include __DIR__ . '/partials/header.php';
   <label>Apellidos: <input type="text" name="last_name" value="<?= htmlspecialchars($user['cognoms']) ?>"></label><br>
   <button type="submit">Update</button>
 </form>
+<br>
 
-<p><a href="/backend/auth/logout.php">Cerrar sesión</a></p>
+<form method="POST" action="../../backend/src/auth/logout.php">
+  <button type="submit">Cerrar sesión</button>
+</form>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>

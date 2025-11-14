@@ -1,10 +1,20 @@
 <?php
+session_start();
 $pageTitle = 'Login';
 include __DIR__ . '/partials/header.php';
+
+$userId = $_SESSION['user_id'] ?? $_COOKIE['user_id'] ?? null;
+if ($userId) {
+  header('Location: ./profile.php');
+  exit;
+}
+
+$error = $_SESSION['error'] ?? '';
+unset($_SESSION['error']);
 ?>
 
-<?php if (!empty($message)): ?>
-  <p style="color: red;"><?= htmlspecialchars($message) ?></p>
+<?php if ($error): ?>
+  <p style="color: red;"><?= htmlspecialchars($error) ?></p>
 <?php endif; ?>
 
 <form method="POST" action="../../backend/src/auth/login.php">

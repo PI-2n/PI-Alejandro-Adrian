@@ -18,10 +18,12 @@ $isLogged = !empty($userId);
     <h1>Bienvenido</h1>
 
     <?php if ($isLogged): ?>
-        <p>Iniciado sesión como: <strong><?= htmlspecialchars($userId) ?></strong></p>
+        <p>Iniciado sesión como: <strong><?= htmlspecialchars($nom_usuari) ?></strong></p>
         <ul>
             <li><a href="../frontend/templates/profile.php">Profile</a></li>
-            <li><a href="../backend/auth/logout.php">Logout</a></li>
+            <form method="POST" action="../backend/src/auth/logout.php">
+                <button type="submit">Cerrar sesión</button>
+            </form>
         </ul>
     <?php else: ?>
         <p>No estás registrado todavía!</p>
