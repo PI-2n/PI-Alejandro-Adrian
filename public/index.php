@@ -96,6 +96,15 @@ $isLogged = !empty($userId);
   </header>
 
   <main>
+
+    <section class="freatured">
+      <video src="video/hollow_knight_silksong.mp4" muted loop autoplay class="featured-background-video"></video>
+      <a href="#" class="featured-link">
+        <h1 class="featured-title">Hollow Knight: Silksong</h1>
+        <p class="featured-subtitle">Ya disponible</p>
+      </a>
+    </section>
+
     <section class="news">
       <h2>Últimas novedades</h2>
       <div class="products">
