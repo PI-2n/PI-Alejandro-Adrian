@@ -13,8 +13,6 @@ nav:
       - "Sprint 5": "sprints/sprint5.md"
       - "Sprint 6": "sprints/sprint6.md"
 
-
-
 theme:
   language: es
   favicon: imagenes/favicon.png
@@ -40,6 +38,8 @@ theme:
     - header.autohide
     - toc.integrate
     - content.tabs.link
+    - navigation.sections
+    - navigation.indexes
 
 extra:
   search:
@@ -69,9 +69,9 @@ markdown_extensions:
       linenums_style: pymdownx-inline
   - pymdownx.superfences:
       custom_fences:
-          - name: mermaid
-            class: mermaid
-            format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tilde
   - pymdownx.smartsymbols
   - footnotes
