@@ -96,7 +96,6 @@ header {
   display: grid;
   gap: clamp(1rem, 2vw, 2rem);
   padding: 2% 7% 5%;
-  color: white;
 }
 
 .news {
@@ -167,6 +166,7 @@ h2.h2offers {
   padding: 0.5rem 1rem;
   font-weight: 400;
   align-items: center;
+  color: white;
 }
 
 .product-text .price {
@@ -190,7 +190,7 @@ footer {
   font-size: clamp(0.9rem, 1vw, 1rem);
 }
 
-/* Videos */
+/* VIDEOS */
 
 .media-container {
   position: relative;
@@ -223,3 +223,69 @@ footer {
 .product.show-video .product-image {
   opacity: 0.3;
 }
+
+
+/* DESTACADO */
+
+.freatured {
+  position: relative;
+  height: 50vh;
+  display: flex; /* Usamos flexbox para centrar el texto */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer; /* Indica que toda la sección es clickeable */
+}
+
+/* Video de fondo (sin cambios significativos) */
+.featured-background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translate(-50%, -60%);
+  object-fit:cover;
+  opacity: 0.5;
+}
+
+/* Contenedor del enlace y texto */
+.featured-link {
+    position: relative; /* Lo pone encima del video de fondo */
+    z-index: 1;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: white;
+    padding: 2rem;
+    /* Esto es crucial: hace que el enlace ocupe toda la sección para que sea totalmente clickeable */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el texto */
+.featured-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.featured-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 400;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+    margin-top: 0.5rem;
+}
+
+/* Los estilos anteriores para .featured-content, .freatured .product, etc., ya no son necesarios
+   y deben ser eliminados de tu styles2.css para evitar conflictos. */
