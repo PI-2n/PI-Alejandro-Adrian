@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "sku": "A001",
+      "nom": "Cafetera Premium",
+      "descripcio": "Cafetera autom\u00e0tica amb molinet integrat",
+      "img": "img/cafetera.jpg",
+      "preu": "129.99",
+      "estoc": 15
+    },
+    {
+      "id": 2,
+      "sku": "A002",
+      "nom": "Tetera El\u00e8ctrica",
+      "descripcio": "Tetera d\u2019acer inoxidable amb control de temperatura",
+      "img": "img/tetera.jpg",
+      "preu": "59.95",
+      "estoc": 10
+    },
+    {
+      "id": 3,
+      "sku": "A003",
+      "nom": "Raton",
+      "descripcio": "un raton super pro",
+      "img": "img/raton",
+      "preu": "59.95",
+      "estoc": 20
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "nom_usuari": "adrian_g",
+      "contrasenya": "$2y$10$HASHADRIANXIFRAT123...",
+      "email": "adrian@example.com",
+      "nom": "Adrián",
+      "cognoms": "Gutiérrez",
+      "data_registre": "2025-10-31T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "nom_usuari": "user",
+      "contrasenya": "1234",
+      "email": "marta@example.com",
+      "nom": "Marta",
+      "cognoms": "López",
+      "data_registre": "2025-10-31T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "nom_usuari": "joan_dev",
+      "contrasenya": "$2y$10$HASHJOANXIFRAT123...",
+      "email": "joan@example.com",
+      "nom": "Joan",
+      "cognoms": "Martínez",
+      "data_registre": "2025-10-31T10:00:00Z"
+    }
+  ]
+}
