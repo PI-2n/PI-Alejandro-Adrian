@@ -13,6 +13,10 @@ nav:
       - "Sprint 5": "sprints/sprint5.md"
       - "Sprint 6": "sprints/sprint6.md"
 
+  - "Riesgos":
+      - "Riesgos individuales": "riesgos/riesgos_individuales.md"
+      - "Plan de prevención": "riesgos/prevencion_riesgos.md"
+
 theme:
   language: es
   favicon: imagenes/favicon.png
