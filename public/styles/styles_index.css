@@ -226,54 +226,36 @@ footer {
 
 /* DESTACADO */
 
-/* DESTACADO */
-
 .featured {
   position: relative;
   height: 50vh;
-  /* CAMBIO CLAVE: Usamos Grid para centrar */
-  display: grid;
-  place-items: center; 
-  /* 'place-items: center;' es el shorthand para 'align-items: center;' y 'justify-items: center;' */
   overflow: hidden;
   text-align: center;
   cursor: pointer;
 }
 
-/* Video de fondo (No necesita cambios) */
 .featured-background-video {
   position: absolute;
   top: 50%;
   left: 50%;
   min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
   transform: translate(-50%, -60%);
   object-fit: cover;
   opacity: 0.5;
 }
 
-/* Contenedor del enlace y texto */
 .featured-link {
   position: absolute; 
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
   text-decoration: none;
   color: white;
-  padding: 2rem; 
-  /* CAMBIO CLAVE: Usamos Grid para centrar el título y subtítulo */
+  padding: 2vh; 
   display: grid;
-  grid-template-rows: auto auto; /* Define dos filas para título y subtítulo */
-  place-content: center; /* Centra el contenido (las dos filas) vertical y horizontalmente */
-  gap: 0.5rem; /* Separación entre título y subtítulo */
+  place-content: center;
+  gap: 2vh; /* Separación entre título y subtítulo */
 }
 
-/* Estilos para el texto (No necesitan cambios) */
 .featured-title {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 800;
@@ -281,16 +263,13 @@ footer {
 }
 
 .featured-subtitle {
-  /* Se elimina margin-top: 0.5rem; porque ahora se usa el gap del padre (.featured-link) */
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 400;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
 }
 
-/* Los estilos anteriores para .featured-content, .featured .product, etc., ya no son necesarios
-   y deben ser eliminados de tu styles2.css para evitar conflictos. */
+/* KEYFRAMES */
 
-/* Definimos la animación de salto */
 @keyframes bounce {
   0% {
     transform: translateY(0);
@@ -309,7 +288,6 @@ footer {
   }
 }
 
-/* Aplicamos al logo */
 .header_image img:hover {
   animation: bounce 1s ease;
 }
