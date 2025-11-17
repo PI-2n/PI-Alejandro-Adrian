@@ -226,7 +226,7 @@ footer {
 
 /* DESTACADO */
 
-.freatured {
+.featured {
   position: relative;
   height: 50vh;
   display: flex; /* Usamos flexbox para centrar el texto */
@@ -286,7 +286,7 @@ footer {
   margin-top: 0.5rem;
 }
 
-/* Los estilos anteriores para .featured-content, .freatured .product, etc., ya no son necesarios
+/* Los estilos anteriores para .featured-content, .featured .product, etc., ya no son necesarios
    y deben ser eliminados de tu styles2.css para evitar conflictos. */
 
 /* Definimos la animación de salto */
