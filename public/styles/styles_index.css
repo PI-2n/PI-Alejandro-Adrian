@@ -5,6 +5,14 @@
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
+main {
+  display: grid; 
+  grid-template-areas:
+    "featured"
+    "news"
+    "offers ";
+}
+
 /*  HEADER  */
 header {
   display: grid;
@@ -99,10 +107,12 @@ header {
 }
 
 .news {
+  grid-area: news;
   background-color: #1a1a1a;
 }
 
 .offers {
+  grid-area: offers;
   background-color: #252525;
 }
 
@@ -227,6 +237,7 @@ footer {
 /* DESTACADO */
 
 .featured {
+  grid-area: featured;
   position: relative;
   height: 50vh;
   overflow: hidden;
@@ -291,3 +302,5 @@ footer {
 .header_image img:hover {
   animation: bounce 1s ease;
 }
+
+
