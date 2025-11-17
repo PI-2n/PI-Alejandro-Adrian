@@ -226,19 +226,21 @@ footer {
 
 /* DESTACADO */
 
+/* DESTACADO */
+
 .featured {
   position: relative;
   height: 50vh;
-  display: flex; /* Usamos flexbox para centrar el texto */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* CAMBIO CLAVE: Usamos Grid para centrar */
+  display: grid;
+  place-items: center; 
+  /* 'place-items: center;' es el shorthand para 'align-items: center;' y 'justify-items: center;' */
   overflow: hidden;
   text-align: center;
-  cursor: pointer; /* Indica que toda la sección es clickeable */
+  cursor: pointer;
 }
 
-/* Video de fondo (sin cambios significativos) */
+/* Video de fondo (No necesita cambios) */
 .featured-background-video {
   position: absolute;
   top: 50%;
@@ -255,24 +257,23 @@ footer {
 
 /* Contenedor del enlace y texto */
 .featured-link {
-  position: relative; /* Lo pone encima del video de fondo */
-  z-index: 1;
-  text-decoration: none; /* Quita el subrayado del enlace */
-  color: white;
-  padding: 2rem;
-  /* Esto es crucial: hace que el enlace ocupe toda la sección para que sea totalmente clickeable */
-  position: absolute;
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  z-index: 1;
+  text-decoration: none;
+  color: white;
+  padding: 2rem; 
+  /* CAMBIO CLAVE: Usamos Grid para centrar el título y subtítulo */
+  display: grid;
+  grid-template-rows: auto auto; /* Define dos filas para título y subtítulo */
+  place-content: center; /* Centra el contenido (las dos filas) vertical y horizontalmente */
+  gap: 0.5rem; /* Separación entre título y subtítulo */
 }
 
-/* Estilos para el texto */
+/* Estilos para el texto (No necesitan cambios) */
 .featured-title {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 800;
@@ -280,10 +281,10 @@ footer {
 }
 
 .featured-subtitle {
+  /* Se elimina margin-top: 0.5rem; porque ahora se usa el gap del padre (.featured-link) */
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 400;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-  margin-top: 0.5rem;
 }
 
 /* Los estilos anteriores para .featured-content, .featured .product, etc., ya no son necesarios
