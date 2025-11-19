@@ -50,6 +50,12 @@ header {
   grid-area: 1 / 1 / 2 / 2;
 }
 
+.search-input:focus {
+  outline: none;
+  background-color: #DD7610;  
+  transition: background-color 0.3s ease;
+}
+
 .search-btn {
   background: none;
   border: none;
