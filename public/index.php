@@ -28,16 +28,17 @@ $isLogged = !empty($userId);
     products.forEach((product) => {
       const video = product.querySelector(".product-video");
       if (!video) return; // saltar si no tiene video
-
+      let hoverTimer;
       product.addEventListener("mouseenter", () => {
         // Espera 0.3s para dejar que se vea la animación de escala
-        setTimeout(() => {
+        hoverTimer = setTimeout(() => {
           product.classList.add("show-video");
           video.currentTime = 0;
           video.play();
         }, 300);
       });
       product.addEventListener("mouseleave", () => {
+        clearTimeout(hoverTimer);
         product.classList.remove("show-video");
         video.pause();
         video.currentTime = 0;
