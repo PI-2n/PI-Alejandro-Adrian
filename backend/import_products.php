@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Validar
     if (empty($name)) {
-        $errors[] = "Por favor, escribe tu nombre.";
+        $errors[] = "Por favor, escribe tu namebre.";
     }
     if (empty($email)) {
         $errors[] = "Por favor, escribe tu correo electrónico.";

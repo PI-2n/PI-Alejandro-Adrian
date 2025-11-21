@@ -86,7 +86,7 @@ $isLogged = !empty($userId);
       </div>
       <div class="separator"></div>
       <div class="user-btn-container">
-        <a href="../frontend/templates/login.php" rel="noopener">
+        <a href="../frontend/templates/tmp_login.php" rel="noopener">
           <img src="img/img_user.png" alt="Iniciar Sesión" class="user-btn" />
         </a>
         <a href="" rel="noopener">
@@ -218,9 +218,9 @@ $isLogged = !empty($userId);
       </div>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 BitKeys. Todos los derechos reservados.</p>
-  </footer>
+
+  <?php include __DIR__ . '../../frontend/templates/partials/footer.php'; ?>
+
 </body>
 
 </html>
@@ -230,7 +230,7 @@ $isLogged = !empty($userId);
     <h1>Bienvenido</h1>
 
     <?php if ($isLogged): ?>
-        <p>Iniciado sesión como: <strong><?= htmlspecialchars($nom_usuari) ?></strong></p>
+        <p>Iniciado sesión como: <strong><?= htmlspecialchars($username) ?></strong></p>
         <ul>
             <li><a href="../frontend/templates/profile.php">Profile</a></li>
             <form method="POST" action="../backend/src/auth/logout.php">

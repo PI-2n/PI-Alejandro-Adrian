@@ -5,7 +5,7 @@ include __DIR__ . '/partials/header.php';
 
 $userId = $_SESSION['user_id'] ?? $_COOKIE['user_id'] ?? null;
 if ($userId) {
-  header('Location: ./profile.php');
+  header('Location: ./tmp_profile.php');
   exit;
 }
 
@@ -23,6 +23,6 @@ unset($_SESSION['error']);
   <button type="submit">Login</button>
 </form>
 
-<p>No tienes cuenta? <a href="register.php"><b>Regístrate</b></a></p>
+<p>No tienes cuenta? <a href="tmp_register.php"><b>Regístrate</b></a></p>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>

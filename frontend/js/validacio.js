@@ -1,13 +1,13 @@
 document
   .getElementById("formContacte")
   .addEventListener("submit", function (event) {
-    const nom = document.getElementById("nom").value;
+    const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const telefon = document.getElementById("telefon").value;
     const regexTelefon = /^[0-9]{9}$/;
 
-    if (nom.length < 3) {
-      alert("El nom ha de tindre almenys 3 caràcters.");
+    if (name.length < 3) {
+      alert("El name ha de tindre almenys 3 caràcters.");
       event.preventDefault();
     }
 

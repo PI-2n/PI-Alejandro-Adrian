@@ -1,25 +1,25 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "sku": "A001",
       "nom": "Cafetera Premium",
-      "descripcio": "Cafetera autom\u00e0tica amb molinet integrat",
+      "descripcio": "Cafetera automàtica amb molinet integrat",
       "img": "img/cafetera.jpg",
       "preu": "129.99",
       "estoc": 15
     },
     {
-      "id": 2,
+      "id": "2",
       "sku": "A002",
-      "nom": "Tetera El\u00e8ctrica",
-      "descripcio": "Tetera d\u2019acer inoxidable amb control de temperatura",
+      "nom": "Tetera Elèctrica",
+      "descripcio": "Tetera d’acer inoxidable amb control de temperatura",
       "img": "img/tetera.jpg",
       "preu": "59.95",
       "estoc": 10
     },
     {
-      "id": 3,
+      "id": "3",
       "sku": "A003",
       "nom": "Raton",
       "descripcio": "un raton super pro",
@@ -30,31 +30,80 @@
   ],
   "users": [
     {
-      "id": 1,
-      "nom_usuari": "adrian_g",
+      "id": "1",
+      "username": "adrian_g",
       "contrasenya": "$2y$10$HASHADRIANXIFRAT123...",
       "email": "adrian@example.com",
       "nom": "Adrián",
-      "cognoms": "Gutiérrez",
+      "lastName": "Gutiérrez",
       "data_registre": "2025-10-31T10:00:00Z"
     },
     {
-      "id": 2,
-      "nom_usuari": "user",
+      "id": "2",
+      "username": "user",
       "contrasenya": "1234",
-      "email": "marta@example.com",
+      "email": "",
       "nom": "Marta",
-      "cognoms": "López",
-      "data_registre": "2025-10-31T10:00:00Z"
+      "lastName": "",
+      "data_registre": "2025-10-31T10:00:00Z",
+      "name": ""
     },
     {
-      "id": 3,
-      "nom_usuari": "joan_dev",
+      "id": "3",
+      "username": "joan_dev",
       "contrasenya": "$2y$10$HASHJOANXIFRAT123...",
       "email": "joan@example.com",
       "nom": "Joan",
-      "cognoms": "Martínez",
+      "lastName": "Martínez",
       "data_registre": "2025-10-31T10:00:00Z"
+    },
+    {
+      "id": "5122",
+      "username": "adri",
+      "contrasenya": "$2y$10$ew2Nu6MyTnFs9O39choIoelb3/.yxoXQ2R47VlSDvjymRHSRjbnBO",
+      "email": "gutionil1@gmail.com",
+      "name": "Adrián",
+      "lastName": "Gutiérrez Galvañ",
+      "data_registre": "2025-11-21T15:07:46+00:00"
+    },
+    {
+      "id": "c7fb",
+      "username": "a",
+      "contrasenya": "$2y$10$5pG19CfqZ4.K8mQWUxX5j.VW8kVeF.2mmotEIcWfw7qo8TpSG4YW6",
+      "email": "gutionil1@gmail.com",
+      "name": "",
+      "lastName": "",
+      "data_registre": "2025-11-21T16:05:23+00:00"
+    },
+    {
+      "id": "e2f9",
+      "username": "asgasg",
+      "contrasenya": "$2y$10$aAKgsOjGtLl7nd/GwySvi.qGHQ6WF9GyWtdxQ5LPzxwo18Oa2fBem",
+      "email": "a@gmail.com",
+      "name": "Adrián Gutiérrez Galvañ",
+      "lastName": "Gutiérrez Galvañ",
+      "data_registre": "2025-11-21T16:11:25+00:00"
+    },
+    {
+      "id": "0223",
+      "username": "10639009",
+      "contrasenya": "$2y$10$iA3sXjckldmVfBN5/jTCBeboeJ5YfUH8a/uuXU2tj6ES.7S9krUw.",
+      "email": "a@gmail.com",
+      "name": "Adrián Gutiérrez Galvañ",
+      "lastName": "Gutiérrez Galvañ",
+      "data_registre": "2025-11-21T16:12:26+00:00"
+    }
+  ],
+  "messages": [
+    {},
+    {
+      "id": "95d0",
+      "name": "Adrián Gutiérrez Galvañ",
+      "email": "gutionil1@gmail.com",
+      "age": "22",
+      "phone": "666666666",
+      "message": "test contatacno",
+      "date": "2025-11-21T16:15:06+00:00"
     }
   ]
 }

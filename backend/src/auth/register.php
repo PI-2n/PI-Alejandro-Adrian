@@ -8,29 +8,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
-    $firstName = trim($_POST['first_name'] ?? '');
-    $lastName = trim($_POST['last_name'] ?? '');
+    $firstName = trim($_POST['name'] ?? '');
+    $lastName = trim($_POST['lastName'] ?? '');
 
     if ($username === '' || $email === '' || $password === '') {
         $message = "Por favor rellene los campos necesarios";
     } else {
-        $existing = jsonRequest('GET', "/usuaris?nom_usuari={$username}");
+
+        // COMPROBAR SI EL USUARIO YA EXISTE (CORRECTO)
+        $existing = jsonRequest('GET', "/users?username={$username}");
+
         if (!empty($existing['data'])) {
-            $message = "El nombre de usario ya existe";
+            $message = "El nombre de usuario ya existe";
         } else {
+
+            // NUEVO USUARIO
             $newUser = [
-                "nom_usuari" => $username,
+                "username" => $username,
                 "contrasenya" => password_hash($password, PASSWORD_DEFAULT),
                 "email" => $email,
-                "nom" => $firstName,
-                "cognoms" => $lastName,
+                "name" => $firstName,
+                "lastName" => $lastName,
                 "data_registre" => date('c')
             ];
 
-            $result = jsonRequest('POST', "/usuaris", $newUser);
+            // GUARDAR EN /users (CORRECTO)
+            $result = jsonRequest('POST', "/users", $newUser);
+
             if ($result['status'] === 201) {
-                $message = "Usuario registrado con éxito";
-                $_SESSION["exito"];
+                $_SESSION["exito"] = true;
+                header('Location: ../../../frontend/templates/tmp_login.php');
+                exit;
             } else {
                 $message = "Error registrando usuario";
             }
@@ -38,4 +46,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include __DIR__ . '/../../frontend/templates/register.php';
+include __DIR__ . '/../../frontend/templates/tmp_register.php';
