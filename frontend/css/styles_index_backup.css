@@ -1,23 +1,8 @@
-/*  FUENTE  */
-$font-main: "Inter", Arial, Helvetica, sans-serif;
-
-/*  COLORES  */
-$color-bg-main: #000;
-$color-bg-secondary: #1a1a1a;
-$color-bg-tertiary: #252525;
-$color-bg-input: #333333;
-$color-card: #202020;
-$color-text: #fff;
-$color-accent: #dd7710ec;
-$color-accent-hover: rgba(255, 165, 0, 1);
-$color-separator: #777777;
-
-/*  GLOBAL  */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $font-main;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -43,25 +28,18 @@ header {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: clamp(0.5rem, 1vw, 2rem);
-  background-color: $color-bg-main;
+  background-color: #000;
   gap: clamp(1rem, 2vw, 2rem);
-
 }
 
 /* LOGO */
-
 .header_image {
   grid-area: logo;
-
-  img {
-    height: clamp(40px, 3vw, 60px);
-
-    &:hover {
-      animation: bounce 1s ease;
-    }
-  }
 }
 
+.header_image img {
+  height: clamp(40px, 3vw, 60px);
+}
 
 /* BARRA DE BÚSQUEDA */
 .header_searchBar {
@@ -70,20 +48,20 @@ header {
 
 .search-form {
   display: grid;
+}
 
-  .search-input {
-    padding: 0.5rem 3rem 0.5rem 1rem;
-    border-radius: 20px;
-    border: none;
-    background-color: $color-bg-input;
-    grid-area: 1 / 1 / 2 / 2;
-    transition: background-color 0.3s ease;
+.search-input {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #333333;
+  grid-area: 1 / 1 / 2 / 2;
+  transition: background-color 0.3s ease;
+}
 
-    &:focus {
-      outline: none;
-      background-color: $color-accent;
-    }
-  }
+.search-input:focus {
+  outline: none;
+  background-color: #dd7710ec;
 }
 
 .search-btn {
@@ -95,10 +73,10 @@ header {
   margin-right: 0.5rem;
   display: grid;
   place-items: center;
+}
 
-  img {
-    height: clamp(20px, 3vw, 20px);
-  }
+.search-btn img {
+  height: clamp(20px, 3vw, 20px);
 }
 
 /* BOTONES DE PLATAFORMAS Y USUARIO */
@@ -107,12 +85,12 @@ header {
   display: grid;
   grid-auto-flow: column;
   gap: clamp(1rem, 1vw, 2rem);
+}
 
-  .separator {
-    width: 1.5px;
-    height: 28px;
-    background-color: $color-separator;
-  }
+.separator {
+  width: 1.5px;
+  height: 28px;
+  background-color: #777777;
 }
 
 .platform-btn-container,
@@ -120,36 +98,35 @@ header {
   display: grid;
   grid-auto-flow: column;
   gap: clamp(0.5rem, 1vw, 1rem);
-
-  .platform-btn,
-  .user-btn {
-    height: clamp(20px, 3vw, 30px);
-    width: auto;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%) hue-rotate(358deg) brightness(101%) contrast(93%);
-      transform: scale(1.3);
-    }
-  }
 }
 
+.platform-btn,
+.user-btn {
+  height: clamp(20px, 3vw, 30px);
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.platform-btn:hover,
+.user-btn:hover {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%) hue-rotate(358deg) brightness(101%) contrast(93%);
+  transform: scale(1.3);
+}
 
 /* SECCIONES */
-
 h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 600;
   margin-left: -4vw;
-  color: $color-text;
+  color: white;
+}
 
-  .h2news {
-    background-color: $color-bg-secondary;
-  }
+h2.h2news {
+  background-color: #1a1a1a;
+}
 
-  .h2offers {
-    background-color: $color-bg-tertiary;
-  }
+h2.h2offers {
+  background-color: #252525;
 }
 
 .featured {
@@ -200,47 +177,31 @@ h2 {
   display: grid;
   gap: clamp(1rem, 2vw, 2rem);
   padding: 2% 7% 5%;
-
-  .products {
-    display: grid;
-  }
 }
 
 .news {
   grid-area: news;
   background-color: #1a1a1a;
-
-  .products {
-    gap: clamp(1rem, 8vw, 10rem);
-    grid-template-columns: repeat(3, auto);
-  }
-
-  @for $i from 1 through 3 {
-    .product:nth-child(#{$i}) {
-      animation-delay: #{$i * 0.1}s;
-    }
-  }
 }
 
 .offers {
   grid-area: offers;
   background-color: #252525;
+}
 
-  .products {
-    gap: clamp(1rem, 3vw, 3rem);
-    grid-template-columns: repeat(5, auto);
-  }
+/* PRODUCTOS */
+.products {
+  display: grid;
+}
 
-  @for $i from 1 through 7 {
-    .product:nth-child(#{$i}) {
-      animation-delay: #{0.3s + ($i * 0.1s)};
-    }
-  }
+.news .products {
+  gap: clamp(1rem, 8vw, 10rem);
+  grid-template-columns: repeat(3, auto);
+}
 
-  .product-text {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+.offers .products {
+  gap: clamp(1rem, 3vw, 3rem);
+  grid-template-columns: repeat(5, auto);
 }
 
 /* PRODUCTO INDIVIDUAL */
@@ -249,8 +210,6 @@ h2 {
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s;
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
 }
 
 .product:hover {
@@ -333,51 +292,6 @@ footer {
   opacity: 0.3;
 }
 
-/* DESTACADO */
-
-.featured {
-  grid-area: featured;
-  position: relative;
-  height: 50vh;
-  overflow: hidden;
-  text-align: center;
-  cursor: pointer;
-}
-
-.featured-background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  transform: translate(-50%, -60%);
-  object-fit: cover;
-  opacity: 0.5;
-}
-
-.featured-link {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: white;
-  padding: 2vh;
-  display: grid;
-  place-content: center;
-  gap: 2vh;
-  /* Separación entre título y subtítulo */
-}
-
-.featured-title {
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 800;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-}
-
-.featured-subtitle {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 400;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-}
 
 /* KEYFRAMES */
 
@@ -403,6 +317,10 @@ footer {
   }
 }
 
+.header_image img:hover {
+  animation: bounce 1s ease;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -413,4 +331,50 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.product {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.news .product:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.news .product:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.news .product:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+
+.offers .product:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.offers .product:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.offers .product:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.offers .product:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+.offers .product:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.offers .product:nth-child(6) {
+  animation-delay: 0.9s;
+}
+
+.offers .product:nth-child(7) {
+  animation-delay: 1s;
 }
