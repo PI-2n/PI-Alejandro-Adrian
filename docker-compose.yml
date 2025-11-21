@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   nginx:
     image: nginx:stable-alpine
@@ -23,7 +21,7 @@ services:
       dockerfile: ./.docker/php/Dockerfile
     container_name: pi_php
     volumes:
-      - ./backend/src:/var/www/html/backend
+      - ./backend:/var/www/html
       - ./frontend:/var/www/html/frontend
       - ./uploads:/var/www/uploads
       - ./data:/var/www/data
