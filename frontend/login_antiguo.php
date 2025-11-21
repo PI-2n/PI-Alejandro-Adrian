@@ -12,7 +12,7 @@ unset($_SESSION["errors"], $_SESSION["exito"]);
 <head>
   <meta charset="UTF-8" />
   <title>Formulari de contacte</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles_index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link

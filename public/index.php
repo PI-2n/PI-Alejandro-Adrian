@@ -11,7 +11,7 @@ $isLogged = !empty($userId);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles/styles_index.css" />
+  <link rel="stylesheet" href="../frontend/css/styles_index.css" />
   <title>Document</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />

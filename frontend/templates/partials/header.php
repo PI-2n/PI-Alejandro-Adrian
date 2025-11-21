@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title><?= htmlspecialchars($pageTitle ?? 'PI Project') ?></title>
-  <link rel="stylesheet" href="/frontend/css/styles.css">
+  <link rel="stylesheet" href="/frontend/css/styles_index.css">
 </head>
 <body>
 <header>

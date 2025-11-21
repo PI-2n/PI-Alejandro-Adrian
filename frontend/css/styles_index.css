@@ -13,6 +13,14 @@ main {
     "offers ";
 }
 
+.error {
+    color: red;
+}
+
+.ok {
+    color: green;
+}
+
 /*  HEADER  */
 header {
   display: grid;

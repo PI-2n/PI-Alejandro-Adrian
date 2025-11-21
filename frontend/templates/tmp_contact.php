@@ -12,7 +12,7 @@ unset($_SESSION["errors"], $_SESSION["exito"]);
 <head>
   <meta charset="UTF-8" />
   <title>Formulari de contacte</title>
-  <link rel="stylesheet" href="ruta_a_css/styles.css">
+  <link rel="stylesheet" href="/frontend/css/styles_index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -25,10 +25,10 @@ unset($_SESSION["errors"], $_SESSION["exito"]);
 
   <form action="../../backend/src/contact/contact.php" id="contactForm" method="post">
     <h3><label for="name">Nom:</label></h3>
-    <input type="text" id="name" name="name" minlength="3" placeholder="Pedro"/>
+    <input type="text" id="name" name="name" minlength="3" placeholder="Pedro" />
 
     <h3><label for="email">Correu:</label></h3>
-    <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com"/>
+    <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" />
 
     <h3><label for="age">Edat:</label></h3>
     <input type="number" id="age" name="age" min="18" max="99" />
