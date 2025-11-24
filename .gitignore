@@ -23,9 +23,6 @@ Thumbs.db
 *.tmp
 *.bak
 
-# ---- Composer ----
-/backend/vendor/
-
 # ---- PHPStorm / JetBrains ----
 .idea/
 *.iml
