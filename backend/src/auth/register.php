@@ -46,4 +46,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include __DIR__ . '/../../frontend/templates/tmp_register.php';
+include __DIR__ . '/../../../frontend/templates/tmp_register.php';

@@ -15,7 +15,7 @@ session_start();
   <label>Usuario: <input type="text" name="username" required></label><br>
   <label>Email: <input type="email" name="email" required></label><br>
   <label>Contraseña: <input type="password" name="password" required></label><br>
-  <label>namebre: <input type="text" name="name"></label><br>
+  <label>Nombre: <input type="text" name="name"></label><br>
   <label>Apellidos: <input type="text" name="lastName"></label><br>
   <button type="submit">Register</button>
 </form>

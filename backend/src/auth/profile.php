@@ -45,4 +45,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include __DIR__ . '/../../frontend/templates/tmp_profile.php';
+include __DIR__ . '/../../../frontend/templates/tmp_profile.php';
