@@ -36,7 +36,7 @@ session_start();
     <?php unset($_SESSION['error_import']); ?>
 <?php endif; ?>
 
-<form method="POST" action="/../backend/src/db/import_products.php">
+<form method="POST" action="../../backend/src/db/import_products.php">
     <p>Asegúrate de que el archivo <em>productes.xlsx</em> está en la carpeta <em>uploads</em>.</p>
     <button type="submit" onclick="return confirm('¿Seguro? Esto borrará los productos actuales y recargará el Excel.')">
         🔄 Importar Productos desde Excel
