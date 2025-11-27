@@ -1,34 +1,41 @@
 <?php
 session_start();
+$pageTitle = 'Contacte'; // Definimos el título para el header
+
+// Recuperar errores o mensajes de éxito de la sesión
 $errors = $_SESSION["errors"] ?? [];
 $exito = $_SESSION["exito"] ?? null;
 
+// Limpiar la sesión para que no salgan los mensajes al recargar
 unset($_SESSION["errors"], $_SESSION["exito"]);
 ?>
 
-<!DOCTYPE html>
-<html lang="ca">
+<?php include __DIR__ . '/partials/header.php'; ?>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Formulari de contacte</title>
-  <link rel="stylesheet" href="/frontend/css/styles_index.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
+<main>
   <h1>Contacta amb nosaltres</h1>
 
-  <form action="../../backend/src/contact/contact.php" id="contactForm" method="post">
+  <?php if (!empty($errors)): ?>
+    <div class="error" style="color: red; margin-bottom: 20px;">
+      <h3>S'han trobat errors:</h3>
+      <ul>
+        <?php foreach ($errors as $error): ?>
+          <li><?= htmlspecialchars($error) ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  <?php elseif ($exito): ?>
+    <div class="ok" style="color: green; margin-bottom: 20px; font-weight: bold;">
+      <?= htmlspecialchars($exito) ?>
+    </div>
+  <?php endif; ?>
+
+  <form action="/backend/src/contact/contact.php" id="contactForm" method="post">
     <h3><label for="name">Nom:</label></h3>
-    <input type="text" id="name" name="name" minlength="3" placeholder="Pedro" />
+    <input type="text" id="name" name="name" minlength="3" placeholder="Pedro" required />
 
     <h3><label for="email">Correu:</label></h3>
-    <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" />
+    <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required />
 
     <h3><label for="age">Edat:</label></h3>
     <input type="number" id="age" name="age" min="18" max="99" />
@@ -37,31 +44,19 @@ unset($_SESSION["errors"], $_SESSION["exito"]);
     <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" placeholder="600123456" /><br><br>
 
     <h3><label for="message">Missatge:</label></h3>
-    <textarea id="message" name="message" placeholder="Escribe tu mensaje"></textarea><br><br>
+    <textarea id="message" name="message" placeholder="Escribe tu mensaje" required></textarea><br><br>
 
-    <input type="checkbox" id="dataConsent" name="dataConsent" />
-    <label for="dataConsent">Consentiment de dades</label><br><br>
+    <div style="margin-bottom: 15px;">
+        <input type="checkbox" id="dataConsent" name="dataConsent" required />
+        <label for="dataConsent">Consentiment de dades</label>
+    </div>
 
     <button type="submit">Enviar</button>
     <button type="reset">Eliminar dades</button>
   </form>
 
-  <!-- <script src="ruta_a_js/validacio.js"></script> -->
-</body>
+</main>
 
-</html>
+<script src="/frontend/js/validacio.js"></script>
 
-<?php if (!empty($errors)): ?>
-  <div class="error">
-    <h3>Errores encontrados:</h3>
-    <ul>
-      <?php foreach ($errors as $error): ?>
-        <li><?= htmlspecialchars($error) ?></li>
-      <?php endforeach; ?>
-    </ul>
-  </div>
-<?php elseif ($exito): ?>
-  <div class="ok">
-    <?= htmlspecialchars($exito) ?>
-  </div>
-<?php endif; ?>
+<?php include __DIR__ . '/partials/footer.php'; ?>
