@@ -1,7 +1,8 @@
 <?php
 function jsonRequest($method, $endpoint, $data = null)
 {
-    $baseUrl = 'http://localhost:3000';
+    // EN DOCKER: Usamos el nombre del servicio definido en docker-compose
+    $baseUrl = 'http://json-server:3000'; 
     $url = $baseUrl . $endpoint;
 
     $ch = curl_init($url);

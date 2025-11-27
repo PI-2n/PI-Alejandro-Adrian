@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($response['status'] !== 200 || empty($response['data'])) {
         $_SESSION['error'] = "Usuario no encontrado";
-        header('Location: ../../../frontend/templates/tmp_login.php');
+        header('Location: /frontend/templates/tmp_login.php'); // Ruta absoluta
         exit;
     }
 
@@ -22,15 +22,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$valid) {
         $_SESSION['error'] = "Contraseña incorrecta";
-        header('Location: ../../../frontend/templates/tmp_login.php');
+        header('Location: /frontend/templates/tmp_login.php'); // Ruta absoluta
         exit;
     }
     
-
     session_regenerate_id(true);
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
     setcookie('user_id', $user['id'], time() + 3600, "/");
-    header('Location: ../../../frontend/templates/tmp_profile.php');
+    
+    // Redirigir al controlador profile.php (no al template directo)
+    header('Location: /backend/src/auth/profile.php');
     exit;
 }

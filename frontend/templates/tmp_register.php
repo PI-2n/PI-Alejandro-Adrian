@@ -1,8 +1,10 @@
 <?php
+session_start(); // SIEMPRE PRIMERO
 $pageTitle = 'Register';
-include __DIR__ . '/partials/header.php';
-session_start();
+$message = $_SESSION['message'] ?? ''; // Recuperar mensajes si los hubiera
 ?>
+
+<?php include __DIR__ . '/partials/header.php'; ?>
 
 <?php if (!empty($message) && !empty($_SESSION["exito"])): ?>
   <p style="color: green;"><?= htmlspecialchars($message) ?></p>
@@ -10,8 +12,7 @@ session_start();
   <p style="color: red;"><?= htmlspecialchars($message) ?></p>
 <?php endif; ?>
 
-
-<form method="POST" action="../../backend/src/auth/register.php">
+<form method="POST" action="/backend/src/auth/register.php">
   <label>Usuario: <input type="text" name="username" required></label><br>
   <label>Email: <input type="email" name="email" required></label><br>
   <label>Contraseña: <input type="password" name="password" required></label><br>

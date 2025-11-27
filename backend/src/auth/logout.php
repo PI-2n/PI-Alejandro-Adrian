@@ -6,9 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     setcookie('user_id', '', time() - 3600, "/");
     session_destroy();
 
-    header('Location: ../../../frontend/templates/tmp_login.php');
+    header('Location: /frontend/templates/tmp_login.php');
     exit();
-
 }
-
-
