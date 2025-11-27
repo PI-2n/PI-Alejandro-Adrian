@@ -1,8 +1,8 @@
 <?php
-require_once __DIR__ . '/../includes/json_connect.php';
 session_start();
+require_once __DIR__ . '/../includes/json_connect.php';
 
-$message = '';
+$error = $_SESSION['error'] ?? '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
@@ -12,14 +12,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lastName = trim($_POST['lastName'] ?? '');
 
     if ($username === '' || $email === '' || $password === '') {
-        $message = "Por favor rellene los campos necesarios";
+        $_SESSION['error'] = "Por favor rellene los campos necesarios";
+        header('Location: /backend/src/auth/register.php');
+        exit;
     } else {
-
         // COMPROBAR SI EL USUARIO YA EXISTE (CORRECTO)
         $existing = jsonRequest('GET', "/users?username={$username}");
 
         if (!empty($existing['data'])) {
-            $message = "El nombre de usuario ya existe";
+            $_SESSION['error'] = "El nombre de usuario ya existe";
+            header('Location: /backend/src/auth/register.php');
+            exit;
         } else {
 
             // NUEVO USUARIO
@@ -40,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: ../../../frontend/templates/tmp_login.php');
                 exit;
             } else {
-                $message = "Error registrando usuario";
+                $error = "Error registrando usuario";
             }
         }
     }

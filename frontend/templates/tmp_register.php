@@ -1,16 +1,20 @@
 <?php
-session_start(); // SIEMPRE PRIMERO
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
 $pageTitle = 'Register';
-$message = $_SESSION['message'] ?? ''; // Recuperar mensajes si los hubiera
+$error = $_SESSION['error'] ?? ''; // Recuperar mensajes si los hubiera
 ?>
 
 <?php include __DIR__ . '/partials/header.php'; ?>
 
-<?php if (!empty($message) && !empty($_SESSION["exito"])): ?>
-  <p style="color: green;"><?= htmlspecialchars($message) ?></p>
-<?php elseif (!empty($message)): ?>
-  <p style="color: red;"><?= htmlspecialchars($message) ?></p>
+<?php if (!empty($_SESSION['exito'])): ?>
+  <p style="color: green;">Registro exitoso</p>
+<?php elseif (!empty($error)): ?>
+  <p style="color: red;"><?= htmlspecialchars($error) ?></p>
 <?php endif; ?>
+
 
 <form method="POST" action="/backend/src/auth/register.php">
   <label>Usuario: <input type="text" name="username" required></label><br>

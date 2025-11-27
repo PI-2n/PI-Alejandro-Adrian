@@ -48,7 +48,17 @@ try {
         $newProducts[] = $item;
     }
 
-    // 6. Leer y actualizar JSON
+    // 6. Eliminar duplicados dentro del Excel mismo
+    $uniqueNewProducts = [];
+    foreach ($newProducts as $prod) {
+        $id = $prod['id'];
+        if (!isset($uniqueNewProducts[$id])) {
+            $uniqueNewProducts[$id] = $prod;
+        }
+    }
+    $newProducts = array_values($uniqueNewProducts);
+
+    // 7. Leer y actualizar JSON
     if (file_exists($jsonPath)) {
         $currentData = json_decode(file_get_contents($jsonPath), true);
     } else {
@@ -58,8 +68,26 @@ try {
         $currentData = ['products' => [], 'users' => []];
     }
 
-    $currentData['products'] = $newProducts;
+    // Transformar productos existentes en un array asociativo por id
+    $existingProductsById = [];
+    if (!empty($currentData['products'])) {
+        foreach ($currentData['products'] as $prod) {
+            $existingProductsById[$prod['id']] = $prod;
+        }
+    }
 
+    // Añadir solo los nuevos productos que no existan
+    foreach ($newProducts as $prod) {
+        $id = $prod['id'];
+        if (!isset($existingProductsById[$id])) {
+            $existingProductsById[$id] = $prod;
+        }
+    }
+
+    // Guardar nuevamente en el formato esperado
+    $currentData['products'] = array_values($existingProductsById);
+
+    // 8. Guardar JSON
     file_put_contents($jsonPath, json_encode($currentData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     $_SESSION['success_import'] = "✅ Productos importados correctamente.";
 
