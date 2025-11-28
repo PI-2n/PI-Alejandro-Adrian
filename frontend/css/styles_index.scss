@@ -17,6 +17,15 @@ $num-prods-news: 3;
 $num-prods-offers: 7;
 
 /*  GLOBAL  */
+@mixin hover-shadow($color, $scale: 1.05) {
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: scale($scale);
+    box-shadow: 0 10px 20px $color;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -213,7 +222,7 @@ h2 {
 
 .news {
   grid-area: news;
-  background-color: #1a1a1a;
+  background-color: $color-bg-secondary;
 
   .products {
     gap: clamp(1rem, 8vw, 10rem);
@@ -229,7 +238,7 @@ h2 {
 
 .offers {
   grid-area: offers;
-  background-color: #252525;
+  background-color: $color-bg-tertiary;
 
   .products {
     gap: clamp(1rem, 3vw, 3rem);
@@ -250,16 +259,14 @@ h2 {
 
 /* PRODUCTO INDIVIDUAL */
 .product {
-  background-color: #202020;
+  background-color: $color-card;
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s;
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
 
-  &:hover {
-    box-shadow: 0 10px 20px $color-accent-hover;
-  }
+  @include hover-shadow($color-accent-hover, 1.1);
 
   &.show-video {
     .product-video {
@@ -300,8 +307,8 @@ h2 {
 /* FOOTER */
 footer {
   width: 100%;
-  background-color: #000;
-  color: #fff;
+  background-color: $color-bg-main;
+  color: $color-text;
   text-align: center;
   padding: clamp(0.5rem, 2vw, 1rem);
   font-size: clamp(0.9rem, 1vw, 1rem);
