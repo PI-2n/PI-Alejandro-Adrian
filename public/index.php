@@ -100,7 +100,7 @@ $isLogged = !empty($userId);
 
     <section class="featured">
       <video src="video/hollow_knight_silksong.mp4" muted loop autoplay class="featured-background-video"></video>
-      <a href="#" class="featured-link">
+      <a href="/frontend/templates/tmp_product.php?id=<?= $product['id']?>" class="featured-link">
         <h1 class="featured-title">Hollow Knight: Silksong</h1>
         <p class="featured-subtitle">Ya disponible</p>
       </a>
@@ -110,7 +110,7 @@ $isLogged = !empty($userId);
       <h2>Últimas novedades</h2>
       <div class="products">
         <div class="product">
-          <a href="#">
+          <a href="/frontend/templates/tmp_product.php?id=3">
             <div class="media-container">
               <img src="watermark/cover_silksong.jpg" alt="Hollow Knight: Silksong" class="product-image" />
               <video src="video/hollow_knight_silksong.mp4" muted preload="none" class="product-video"></video>

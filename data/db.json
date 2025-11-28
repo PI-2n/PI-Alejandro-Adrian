@@ -20,66 +20,66 @@
     },
     {
       "id": 3,
-      "sku": "A003",
-      "nom": "Raton",
-      "descripcio": "un raton super pro",
-      "img": "img/raton",
-      "preu": "59.95",
+      "sku": "G000",
+      "nom": "Hollow Knight: Silksong",
+      "descripcio": "Esperada secuela del aclamado juego Hollow Knight, donde los jugadores encarnan a Hornet.",
+      "img": "watermark/cover_silksong.jpg",
+      "preu": "19.99",
       "estoc": 20
     },
     {
       "id": 4,
-      "sku": "A004",
-      "nom": "Raton",
-      "descripcio": "un raton super pro",
-      "img": "img/raton",
-      "preu": "59.95",
-      "estoc": 20
+      "sku": "G001",
+      "nom": "Baldur's Gate III",
+      "descripcio": "RPG de fantasía épica, ganador de múltiples premios.",
+      "img": "watermark/cover_baldurs_gate.jpg",
+      "preu": "69.99",
+      "estoc": 50
     },
     {
       "id": 5,
-      "sku": "A004",
-      "nom": "Raton",
-      "descripcio": "un raton super pro",
-      "img": "img/raton",
-      "preu": "59.95",
-      "estoc": 20
+      "sku": "G002",
+      "nom": "Celeste",
+      "descripcio": "Plataformas de precisión aclamado por la crítica.",
+      "img": "watermark/cover_celeste.jpg",
+      "preu": "19.99",
+      "estoc": 100
     },
     {
       "id": 6,
-      "sku": "A004",
-      "nom": "Raton",
-      "descripcio": "un raton super pro",
-      "img": "img/raton",
-      "preu": "59.95",
-      "estoc": 20
+      "sku": "G003",
+      "nom": "Hogwarts Legacy",
+      "descripcio": "RPG de acción ambientado en el mundo mágico de Harry Potter.",
+      "img": "watermark/cover_hogwarts_legacy.jpg",
+      "preu": "59.99",
+      "estoc": 35
     },
     {
       "id": 7,
-      "sku": "A004",
-      "nom": "Raton",
-      "descripcio": "un raton super pro",
-      "img": "img/raton",
-      "preu": "59.95",
-      "estoc": 20
+      "sku": "S001",
+      "nom": "Windows 11 OEM",
+      "descripcio": "Licencia original para instalación de sistema operativo.",
+      "img": "watermark/cover_windows11.jpg",
+      "preu": "119.99",
+      "estoc": 25
     },
     {
       "id": 8,
-      "sku": "A004",
-      "nom": "Raton",
-      "descripcio": "un raton super pro",
-      "img": "img/raton",
-      "preu": "59.95",
-      "estoc": 20
+      "sku": "G004",
+      "nom": "Cuphead",
+      "descripcio": "Run and Gun clásico con estilo de animación de los años 30.",
+      "img": "watermark/cover_cuphead.jpg",
+      "preu": "19.99",
+      "estoc": 70
     },
     {
       "id": 9,
-      "sku": "A005",
-      "nom": "asdasd",
-      "descripcio": "asdasd",
-      "img": "asdasd",
-      "preu": "20.20",
-      "estoc": 20
+      "sku": "G005",
+      "nom": "Borderlands 4",
+      "descripcio": "Nuevo título de la saga shooter looter (Pre-order).",
+      "img": "watermark/cover_borderlands4.jpg",
+      "preu": "59.99",
+      "estoc": 45
     }
   ],
   "users": [
@@ -166,6 +166,35 @@
       "phone": "123456789",
       "message": "mensage",
       "date": "2025-11-27T18:36:50+00:00"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "product_id": 4,
+      "user_id": "1",
+      "username": "adrian_g",
+      "rating": 5,
+      "comment": "¡Juego del año! Me ha encantado la historia.",
+      "date": "2024-03-01T10:00:00+00:00"
+    },
+    {
+      "id": "28d6",
+      "product_id": 4,
+      "user_id": "2",
+      "username": "user",
+      "rating": 4,
+      "comment": "a",
+      "date": "2025-11-28T16:55:15+00:00"
+    },
+    {
+      "id": "a15d",
+      "product_id": 4,
+      "user_id": "2",
+      "username": "user",
+      "rating": 3,
+      "comment": "b",
+      "date": "2025-11-28T16:55:22+00:00"
     }
   ]
 }
