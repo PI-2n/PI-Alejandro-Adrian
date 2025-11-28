@@ -1,6 +1,7 @@
 <?php
 session_start(); // SIEMPRE PRIMERO
 $pageTitle = 'Login';
+$customCss = '/frontend/css/styles_login.css';
 
 $userId = $_SESSION['user_id'] ?? $_COOKIE['user_id'] ?? null;
 if ($userId) {

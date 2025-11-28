@@ -12,8 +12,15 @@ $pageTitle = $pageTitle ?? 'BitKeys';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
+
+  <?php if (!empty($customCss)): ?>
+    <link rel="stylesheet" href="<?= htmlspecialchars($customCss) ?>" />
+  <?php else: ?>
+    <!--<link rel="stylesheet" href="/frontend/css/styles_index.css" />-->
+  <?php endif; ?>
   <link rel="stylesheet" href="/frontend/css/styles_index.css" />
+
   <title><?= htmlspecialchars($pageTitle) ?></title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,7 +39,8 @@ $pageTitle = $pageTitle ?? 'BitKeys';
     <div class="header_searchBar">
       <form class="search-form" action="/search" method="get" role="search" aria-label="Buscar en el sitio">
         <label for="q" class="visually-hidden"></label>
-        <input id="q" class="search-input" name="q" type="search" placeholder="Buscar..." aria-label="Texto de búsqueda" required />
+        <input id="q" class="search-input" name="q" type="search" placeholder="Buscar..." aria-label="Texto de búsqueda"
+          required />
         <button class="search-btn" type="submit">
           <img src="/img/img_lupa.png" alt="Buscar" />
         </button>
@@ -47,11 +55,12 @@ $pageTitle = $pageTitle ?? 'BitKeys';
         <a href="#" rel="noopener"><img src="/img/img_switch.png" alt="Nintendo Switch" class="platform-btn" /></a>
         <a href="#" rel="noopener"><img src="/img/img_pc.png" alt="PC Software" class="platform-btn" /></a>
       </div>
-      
+
       <div class="separator"></div>
-      
+
       <div class="user-btn-container">
-        <a href="<?= $isLogged ? '/backend/src/auth/profile.php' : '/frontend/templates/tmp_login.php' ?>" rel="noopener">
+        <a href="<?= $isLogged ? '/backend/src/auth/profile.php' : '/frontend/templates/tmp_login.php' ?>"
+          rel="noopener">
           <img src="/img/img_user.png" alt="Usuario" class="user-btn" />
         </a>
         <a href="#" rel="noopener">

@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Profile';
+$customCss = '/frontend/css/styles_profile.css';
 
 // Aseguramos que user tenga datos para evitar errores si entras directo
 $user = $user ?? []; 

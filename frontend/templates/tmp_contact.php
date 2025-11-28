@@ -1,6 +1,7 @@
 <?php
 session_start();
 $pageTitle = 'Contacte'; // Definimos el título para el header
+$customCss = '/frontend/css/styles_contact.css';
 
 // Recuperar errores o mensajes de éxito de la sesión
 $errors = $_SESSION["errors"] ?? [];

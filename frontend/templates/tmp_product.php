@@ -30,6 +30,7 @@ $comments = $commResponse['data'] ?? [];
 
 // Título de la pestaña
 $pageTitle = $product['nom'];
+$customCss = '/frontend/css/styles_product.css';
 
 // Recuperar mensajes de error/éxito de la sesión
 $msgSuccess = $_SESSION['success_comment'] ?? null;

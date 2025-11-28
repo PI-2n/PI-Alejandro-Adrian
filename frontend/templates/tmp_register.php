@@ -4,6 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $pageTitle = 'Register';
+$customCss = '/frontend/css/styles_register.css';
 $error = $_SESSION['error'] ?? ''; // Recuperar mensajes si los hubiera
 ?>
 

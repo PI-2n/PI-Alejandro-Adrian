@@ -122,7 +122,7 @@ $isLogged = !empty($userId);
           </a>
         </div>
         <div class="product">
-          <a href="#">
+          <a href="/frontend/templates/tmp_product.php?id=5">
             <div class="media-container">
               <img src="watermark/cover_celeste.jpg" alt="Celeste" class="product-image" />
               <video src="video/celeste.mp4" muted preload="none" class="product-video"></video>
@@ -134,7 +134,7 @@ $isLogged = !empty($userId);
           </a>
         </div>
         <div class="product" id="baldurs-gate">
-          <a href="#">
+          <a href="/frontend/templates/tmp_product.php?id=4">
             <div class="media-container">
               <img src="watermark/cover_baldurs_gate.jpg" alt="Baldur's Gate III" class="product-image" />
               <video src="video/baldurs_gate.mp4" muted preload="none" class="product-video"></video>
