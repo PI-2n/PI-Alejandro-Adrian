@@ -27,7 +27,13 @@ header {
   align-items: center;
   padding: clamp(0.5rem, 1vw, 2rem);
   background-color: #000;
-  gap: clamp(1rem, 2vw, 2rem); }
+  gap: clamp(1rem, 2vw, 2rem);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease; }
+  header.scrolled {
+    background-color: rgba(0, 0, 0, 0.7); }
   header .header_image {
     grid-area: logo; }
     header .header_image img {
@@ -108,8 +114,7 @@ h2 {
   position: relative;
   height: 50vh;
   overflow: hidden;
-  text-align: center;
-  cursor: pointer; }
+  text-align: center; }
   .featured .featured-background-video {
     position: absolute;
     top: 50%;

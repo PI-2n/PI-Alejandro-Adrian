@@ -59,6 +59,14 @@ header {
   padding: clamp(0.5rem, 1vw, 2rem);
   background-color: $color-bg-main;
   gap: clamp(1rem, 2vw, 2rem);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+
+  &.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 
   .header_image {
     grid-area: logo;
@@ -170,7 +178,6 @@ h2 {
   height: 50vh;
   overflow: hidden;
   text-align: center;
-  cursor: pointer;
 
   .featured-background-video {
     position: absolute;
