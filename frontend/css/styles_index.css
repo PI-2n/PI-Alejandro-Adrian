@@ -27,15 +27,15 @@ header {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: clamp(0.5rem, 1vw, 2rem);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: black;
   gap: clamp(1rem, 2vw, 2rem);
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
-  z-index: 100;
-  transition: background-color 0.4s ease; }
+  z-index: 100; }
   header.scrolled {
-    background-color: black; }
+    transition: background-color 0.4s ease;
+    background-color: rgba(0, 0, 0, 0.7); }
   header:has(.search-input:focus) {
     background-color: black; }
   header .header_image {
@@ -54,11 +54,11 @@ header {
     padding: 0.5rem 3rem 0.5rem 1rem;
     border-radius: 20px;
     border: none;
-    background-color: rgba(51, 51, 51, 0.4);
+    background-color: #333333;
     grid-area: 1 / 1 / 2 / 2;
     transition: background-color 0.3s ease; }
     .search-form .search-input.scrolled {
-      background-color: #333333; }
+      background-color: rgba(51, 51, 51, 0.7); }
     .search-form .search-input:focus {
       outline: none;
       background-color: #dd7710ec; }

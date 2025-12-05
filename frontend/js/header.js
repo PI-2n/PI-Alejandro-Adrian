@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 200) {
             header.classList.add('scrolled');
             searchInput.classList.add('scrolled');
         } else {

@@ -41,6 +41,7 @@ main {
     "news"
     "offers";
   width: 100%;
+  
 }
 
 .error {
@@ -58,16 +59,16 @@ header {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: clamp(0.5rem, 1vw, 2rem);
-  background-color: rgba($color-bg-main, 0.4);
+  background-color: rgba($color-bg-main, 1);
   gap: clamp(1rem, 2vw, 2rem);
-  position:fixed;
+  position:sticky;
   width: 100%;
   top: 0;
-  z-index: 100;
-  transition: background-color 0.4s ease;
+  z-index: 100;  
 
   &.scrolled {
-    background-color: rgba($color-bg-main, 1);
+    transition: background-color 0.4s ease;
+    background-color: rgba($color-bg-main, 0.7);
   }
 
   &:has(.search-input:focus) {
@@ -99,12 +100,12 @@ header {
     padding: 0.5rem 3rem 0.5rem 1rem;
     border-radius: 20px;
     border: none;
-    background-color: rgba($color-bg-input, 0.4);
+    background-color: rgba($color-bg-input, 1);
     grid-area: 1 / 1 / 2 / 2;
     transition: background-color 0.3s ease;
 
     &.scrolled {
-      background-color: rgba($color-bg-input, 1);
+      background-color: rgba($color-bg-input, 0.7);
     }
 
     &:focus {
