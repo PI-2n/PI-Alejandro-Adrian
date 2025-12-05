@@ -57,15 +57,20 @@ header {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: clamp(0.5rem, 1vw, 2rem);
-  background-color: $color-bg-main;
+  background-color: rgba($color-bg-main, 0.4);
   gap: clamp(1rem, 2vw, 2rem);
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 100;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease;
 
   &.scrolled {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba($color-bg-main, 1);
+  }
+
+  &:has(.search-input:focus) {
+    background-color: rgba($color-bg-main, 1);
   }
 
   .header_image {
@@ -93,9 +98,13 @@ header {
     padding: 0.5rem 3rem 0.5rem 1rem;
     border-radius: 20px;
     border: none;
-    background-color: $color-bg-input;
+    background-color: rgba($color-bg-input, 0.4);
     grid-area: 1 / 1 / 2 / 2;
     transition: background-color 0.3s ease;
+
+    &.scrolled {
+      background-color: rgba($color-bg-input, 1);
+    }
 
     &:focus {
       outline: none;
@@ -175,9 +184,11 @@ h2 {
 .featured {
   grid-area: featured;
   position: relative;
-  height: 50vh;
+  height: 65vh;
   overflow: hidden;
   text-align: center;
+  margin-top: 0;
+  margin-left: -1vh;
 
   .featured-background-video {
     position: absolute;

@@ -26,14 +26,17 @@ header {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: clamp(0.5rem, 1vw, 2rem);
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.4);
   gap: clamp(1rem, 2vw, 2rem);
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 100;
-  transition: background-color 0.3s ease; }
+  transition: background-color 0.4s ease; }
   header.scrolled {
-    background-color: rgba(0, 0, 0, 0.7); }
+    background-color: black; }
+  header:has(.search-input:focus) {
+    background-color: black; }
   header .header_image {
     grid-area: logo; }
     header .header_image img {
@@ -50,9 +53,11 @@ header {
     padding: 0.5rem 3rem 0.5rem 1rem;
     border-radius: 20px;
     border: none;
-    background-color: #333333;
+    background-color: rgba(51, 51, 51, 0.4);
     grid-area: 1 / 1 / 2 / 2;
     transition: background-color 0.3s ease; }
+    .search-form .search-input.scrolled {
+      background-color: #333333; }
     .search-form .search-input:focus {
       outline: none;
       background-color: #dd7710ec; }
@@ -112,9 +117,11 @@ h2 {
 .featured {
   grid-area: featured;
   position: relative;
-  height: 50vh;
+  height: 65vh;
   overflow: hidden;
-  text-align: center; }
+  text-align: center;
+  margin-top: 0;
+  margin-left: -1vh; }
   .featured .featured-background-video {
     position: absolute;
     top: 50%;
