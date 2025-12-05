@@ -1,3 +1,4 @@
+/*sass --watch styles_index.scss:styles_index.css*/
 /*  FUENTE  */
 /*  COLORES  */
 /* VARIABLES */
@@ -120,7 +121,6 @@ h2 {
   height: 65vh;
   overflow: hidden;
   text-align: center;
-  margin-top: 0;
   margin-left: -1vh; }
   .featured .featured-background-video {
     position: absolute;

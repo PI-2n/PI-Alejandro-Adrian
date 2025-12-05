@@ -1,3 +1,4 @@
+/*sass --watch styles_index.scss:styles_index.css*/
 /*  FUENTE  */
 $font-main: "Inter", Arial, Helvetica, sans-serif;
 
@@ -59,7 +60,7 @@ header {
   padding: clamp(0.5rem, 1vw, 2rem);
   background-color: rgba($color-bg-main, 0.4);
   gap: clamp(1rem, 2vw, 2rem);
-  position: fixed;
+  position:fixed;
   width: 100%;
   top: 0;
   z-index: 100;
@@ -187,7 +188,6 @@ h2 {
   height: 65vh;
   overflow: hidden;
   text-align: center;
-  margin-top: 0;
   margin-left: -1vh;
 
   .featured-background-video {
