@@ -6,14 +6,18 @@
   color: #fff;
   background-color: #1a1a1a;
   padding: 2rem;
-  border-radius: 15px; }
-  .product-detail h1 {
-    color: #dd7710ec; }
+  border-radius: 15px;
+}
+.product-detail h1 {
+  color: rgba(221, 119, 16, 0.9254901961);
+}
 
 .comments-section {
-  color: #fff; }
+  color: #fff;
+}
 
 .comment-item {
-  border-bottom: 1px solid #777777 !important; }
+  border-bottom: 1px solid #777777 !important;
+}
 
 /*# sourceMappingURL=product.css.map */

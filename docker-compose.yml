@@ -17,7 +17,7 @@ services:
 
   php:
     build:
-      context: ./ 
+      context: ./
       dockerfile: ./.docker/php/Dockerfile
     container_name: pi_php
     volumes:
@@ -55,8 +55,20 @@ services:
     networks:
       - pi_network
 
+  sass-watcher:
+    image: node:20-alpine
+    container_name: pi_sass
+    working_dir: /app
+    volumes:
+      - ./frontend:/app/frontend
+    command: >
+      sh -c "npm install -g sass && sass --watch /app/frontend/scss:/app/frontend/css"
+    networks:
+      - pi_network
+
 volumes:
   db_data:
+
 
 networks:
   pi_network:
