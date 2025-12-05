@@ -1,0 +1,52 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+form {
+    background-color: $color-card;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    color: white;
+    
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        background-color: $color-bg-input;
+        border: none;
+        border-radius: 5px;
+        color: white;
+
+        &:focus {
+            outline: 2px solid $color-accent;
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 1rem;
+        background-color: $color-accent;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $color-accent-hover;
+        }
+    }
+}

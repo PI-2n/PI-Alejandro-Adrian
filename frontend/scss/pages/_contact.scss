@@ -1,0 +1,44 @@
+// _contact.scss
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: white;
+}
+
+form#contactForm {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: $color-card;
+    border-radius: 10px;
+    
+    h3 { margin-bottom: 5px; }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        background: $color-bg-input;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        
+        &:focus { outline: 2px solid $color-accent; }
+    }
+    
+    button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: $color-accent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        
+        &:hover { background-color: $color-accent-hover; }
+        &[type="reset"] { background-color: #555; }
+    }
+}

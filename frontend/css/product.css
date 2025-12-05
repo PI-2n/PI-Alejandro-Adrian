@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* FUENTE  */
+/* COLORES  */
+/* VARIABLES DE CONFIGURACIÓN */
+.product-detail {
+  color: #fff;
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px; }
+  .product-detail h1 {
+    color: #dd7710ec; }
+
+.comments-section {
+  color: #fff; }
+
+.comment-item {
+  border-bottom: 1px solid #777777 !important; }
+
+/*# sourceMappingURL=product.css.map */

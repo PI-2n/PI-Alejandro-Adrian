@@ -1,0 +1,106 @@
+header {
+  display: grid;
+  grid-template-areas: "logo search buttons";
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: clamp(0.5rem, 1vw, 2rem);
+  background-color: rgba($color-bg-main, 1);
+  gap: clamp(1rem, 2vw, 2rem);
+  
+  // Sticky properties
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.4s ease;
+
+  &.scrolled {
+    background-color: rgba($color-bg-main, 0.7);
+    backdrop-filter: blur(10px);
+  }
+
+  &:has(.search-input:focus) {
+    background-color: rgba($color-bg-main, 1);
+  }
+
+  .header_image {
+    grid-area: logo;
+
+    img {
+      height: clamp(40px, 3vw, 60px);
+      &:hover { animation: bounce 1s ease; }
+    }
+  }
+}
+
+.header_searchBar {
+  grid-area: search;
+}
+
+.search-form {
+  display: grid;
+
+  .search-input {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba($color-bg-input, 1);
+    grid-area: 1 / 1 / 2 / 2;
+    transition: background-color 0.3s ease;
+    color: $color-text;
+
+    &.scrolled {
+      background-color: rgba($color-bg-input, 0.7);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $color-accent;
+    }
+  }
+
+  .search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: end;
+    margin-right: 0.5rem;
+    display: grid;
+    place-items: center;
+
+    img { height: clamp(20px, 3vw, 20px); }
+  }
+}
+
+.header_btn-container {
+  grid-area: buttons;
+  display: grid;
+  grid-auto-flow: column;
+  gap: clamp(1rem, 1vw, 2rem);
+
+  .separator {
+    width: 1.5px;
+    height: 28px;
+    background-color: $color-separator;
+  }
+}
+
+.platform-btn-container,
+.user-btn-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: clamp(0.5rem, 1vw, 1rem);
+
+  .platform-btn,
+  .user-btn {
+    height: clamp(20px, 3vw, 30px);
+    width: auto;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%) hue-rotate(358deg) brightness(101%) contrast(93%);
+      transform: scale(1.3);
+    }
+  }
+}

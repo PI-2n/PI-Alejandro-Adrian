@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* FUENTE  */
+/* COLORES  */
+/* VARIABLES DE CONFIGURACIÓN */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: white; }
+
+form#contactForm {
+  max-width: 600px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #202020;
+  border-radius: 10px; }
+  form#contactForm h3 {
+    margin-bottom: 5px; }
+  form#contactForm input, form#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #333333;
+    border: none;
+    border-radius: 5px;
+    color: white; }
+    form#contactForm input:focus, form#contactForm textarea:focus {
+      outline: 2px solid #dd7710ec; }
+  form#contactForm button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #dd7710ec;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px; }
+    form#contactForm button:hover {
+      background-color: orange; }
+    form#contactForm button[type="reset"] {
+      background-color: #555; }
+
+/*# sourceMappingURL=contact.css.map */

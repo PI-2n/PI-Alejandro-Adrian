@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* FUENTE  */
+/* COLORES  */
+/* VARIABLES DE CONFIGURACIÓN */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 20px; }
+
+form {
+  background-color: #202020;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  color: white; }
+  form label {
+    display: block;
+    margin-bottom: 0.5rem; }
+  form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #333333;
+    border: none;
+    border-radius: 5px;
+    color: white; }
+    form input:focus {
+      outline: 2px solid #dd7710ec; }
+  form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #dd7710ec;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s; }
+    form button:hover {
+      background-color: orange; }
+
+/*# sourceMappingURL=login.css.map */

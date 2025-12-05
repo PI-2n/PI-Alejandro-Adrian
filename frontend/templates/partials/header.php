@@ -14,12 +14,11 @@ $pageTitle = $pageTitle ?? 'BitKeys';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
+  <link rel="stylesheet" href="/frontend/css/styles_index.css" />
+
   <?php if (!empty($customCss)): ?>
     <link rel="stylesheet" href="<?= htmlspecialchars($customCss) ?>" />
-  <?php else: ?>
-    <!--<link rel="stylesheet" href="/frontend/css/styles_index.css" />-->
   <?php endif; ?>
-  <link rel="stylesheet" href="/frontend/css/styles_index.css" />
 
   <title><?= htmlspecialchars($pageTitle) ?></title>
 

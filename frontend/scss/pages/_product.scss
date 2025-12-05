@@ -1,0 +1,16 @@
+.product-detail {
+    color: $color-text;
+    background-color: $color-bg-secondary;
+    padding: 2rem;
+    border-radius: 15px;
+    
+    h1 { color: $color-accent; }
+}
+
+.comments-section {
+    color: $color-text;
+}
+
+.comment-item {
+    border-bottom: 1px solid $color-separator !important;
+}

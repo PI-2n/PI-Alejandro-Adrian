@@ -1,0 +1,27 @@
+main {
+    padding: 2rem;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h3 {
+    margin-top: 2rem;
+    border-bottom: 1px solid $color-separator;
+    padding-bottom: 0.5rem;
+}
+
+form {
+    background-color: $color-card;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    
+    input {
+        background-color: $color-bg-input;
+        border: 1px solid #444;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+}

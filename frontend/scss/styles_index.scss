@@ -1,0 +1,13 @@
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/reset';
+@import 'base/global';
+
+// Utils
+@import 'utils/animations';
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/product_card';
+
+@import 'pages/index';

@@ -1,0 +1,10 @@
+// _footer.scss
+footer {
+  width: 100%;
+  background-color: $color-bg-main;
+  color: $color-text;
+  text-align: center;
+  padding: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin-top: auto; 
+}

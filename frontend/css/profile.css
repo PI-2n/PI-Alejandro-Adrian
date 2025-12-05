@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* FUENTE  */
+/* COLORES  */
+/* VARIABLES DE CONFIGURACIÓN */
+main {
+  padding: 2rem;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto; }
+
+h3 {
+  margin-top: 2rem;
+  border-bottom: 1px solid #777777;
+  padding-bottom: 0.5rem; }
+
+form {
+  background-color: #202020;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1rem; }
+  form input {
+    background-color: #333333;
+    border: 1px solid #444;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px; }
+
+/*# sourceMappingURL=profile.css.map */
