@@ -1,9 +1,7 @@
 <?php
-// Lógica para detectar si el usuario está logueado y ajustar el enlace del icono
 $userId = $_SESSION['user_id'] ?? $_COOKIE['user_id'] ?? null;
 $isLogged = !empty($userId);
 
-// Título por defecto si no se ha definido antes
 $pageTitle = $pageTitle ?? 'BitKeys';
 ?>
 <!DOCTYPE html>
@@ -13,7 +11,7 @@ $pageTitle = $pageTitle ?? 'BitKeys';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
+  <link rel="stylesheet" href="/frontend/vendor/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/frontend/css/styles_index.css" />
 
   <?php if (!empty($customCss)): ?>
@@ -69,3 +67,10 @@ $pageTitle = $pageTitle ?? 'BitKeys';
       </div>
     </div>
   </header>
+  <div class="platform-btn-mobile">
+    <a href="#"><img src="/img/img_steam.png" alt="Steam" class="platform-btn" /></a>
+    <a href="#"><img src="/img/img_ps.png" alt="PlayStation" class="platform-btn" /></a>
+    <a href="#"><img src="/img/img_xbox.png" alt="Xbox" class="platform-btn" /></a>
+    <a href="#"><img src="/img/img_switch.png" alt="Nintendo Switch" class="platform-btn" /></a>
+    <a href="#"><img src="/img/img_pc.png" alt="PC Software" class="platform-btn" /></a>
+  </div>

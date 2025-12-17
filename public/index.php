@@ -47,8 +47,9 @@ $isLogged = !empty($userId);
   });
 </script>
 
-<body>
-    <?php include __DIR__ . '../../frontend/templates/partials/header.php'; ?>
+<?php include __DIR__ . '../../frontend/templates/partials/header.php'; ?>
+
+<body>    
 
   <main>
 
