@@ -68,9 +68,8 @@ h2 {
   padding: 2% 7% 5%;
 
   .carousel-inner {
-    overflow: hidden; // Cambiamos a hidden para controlar el scroll nosotros
-    display: flex;
-    padding: 40px 0;
+    overflow: visible; 
+    display: flex;    
   }
 
   .carousel-control-prev,
@@ -80,6 +79,7 @@ h2 {
 
   .products {
     display: grid;
+    padding: 40px 0;
   }
 }
 
@@ -90,6 +90,7 @@ h2 {
   .products {
     gap: clamp(1rem, 8vw, 10rem);
     grid-template-columns: repeat(3, 1fr);
+    padding: 40px 0;
   }
 
   //@for $i from 1 through $num-prods-news {

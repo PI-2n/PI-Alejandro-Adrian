@@ -362,9 +362,8 @@ h2 .h2offers {
 }
 .news .carousel-inner,
 .offers .carousel-inner {
-  overflow: hidden;
+  overflow: visible;
   display: flex;
-  padding: 40px 0;
 }
 .news .carousel-control-prev,
 .news .carousel-control-next,
@@ -375,6 +374,7 @@ h2 .h2offers {
 .news .products,
 .offers .products {
   display: grid;
+  padding: 40px 0;
 }
 
 .news {
@@ -384,6 +384,7 @@ h2 .h2offers {
 .news .products {
   gap: clamp(1rem, 8vw, 10rem);
   grid-template-columns: repeat(3, 1fr);
+  padding: 40px 0;
 }
 
 .offers {
