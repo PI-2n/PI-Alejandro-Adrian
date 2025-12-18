@@ -7,7 +7,7 @@ header {
   padding: clamp(0.5rem, 1vw, 2rem);
   background-color: rgba($color-bg-main, 1);
   gap: clamp(1rem, 2vw, 2rem);
-  
+
   // Sticky property
   position: sticky;
   width: 100%;
@@ -29,7 +29,9 @@ header {
 
     img {
       height: clamp(40px, 3vw, 60px);
-      &:hover { animation: bounce 1s ease; }
+      &:hover {
+        animation: bounce 1s ease;
+      }
     }
   }
 }
@@ -70,7 +72,9 @@ header {
     display: grid;
     place-items: center;
 
-    img { height: clamp(20px, 3vw, 20px); }
+    img {
+      height: clamp(20px, 3vw, 20px);
+    }
   }
 }
 
@@ -100,7 +104,8 @@ header {
     transition: transform 0.2s ease;
 
     &:hover {
-      filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%) hue-rotate(358deg) brightness(101%) contrast(93%);
+      filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%)
+        hue-rotate(358deg) brightness(101%) contrast(93%);
       transform: scale(1.3);
     }
   }
@@ -111,31 +116,41 @@ header {
 }
 
 @media (max-width: 768px) {
-  /* Ocultar el contenedor original */
   .platform-btn-container {
     display: none;
   }
 
-  /* Mostrar el nuevo div de móvil */
+  .separator {
+    display: none;
+  }
+
   .platform-btn-mobile {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    position: absolute; /* para que no ocupe espacio en el flujo */
+    gap: 2rem;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: transparent;
+    background-color: $color-bg-input;
     z-index: 100;
+    transition: opacity 0.3s ease, visibility 0.1s ease;
+
+    .platform-btn {
+      max-width: 25px;
+    }
   }
 
-  /* Ajustes de header y búsqueda */
+  .platform-btn-mobile.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .header_searchBar {
     width: 100%;
 
     .search-form {
       position: relative;
       display: flex;
+      justify-content: center;
       align-items: center;
 
       .search-input {
@@ -144,11 +159,27 @@ header {
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s ease;
+        border-radius: 20px;
+        border: none;
+        background-color: rgba($color-bg-input, 1);
+        color: $color-text;
       }
 
       .search-btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 2;
         cursor: pointer;
+        transition: all 0.3s ease;
+
+        img {
+          height: clamp(20px, 3vw, 20px);
+        }
+      }
+
+      &:focus-within {
+        justify-content: flex-start;
       }
 
       &:focus-within .search-input {
@@ -156,6 +187,11 @@ header {
         padding: 0.5rem 3rem 0.5rem 1rem;
         opacity: 1;
         pointer-events: auto;
+      }
+
+      &:focus-within .search-btn {
+        right: 0;
+        transform: translateX(0);
       }
     }
   }

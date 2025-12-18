@@ -74,3 +74,15 @@ $pageTitle = $pageTitle ?? 'BitKeys';
     <a href="#"><img src="/img/img_switch.png" alt="Nintendo Switch" class="platform-btn" /></a>
     <a href="#"><img src="/img/img_pc.png" alt="PC Software" class="platform-btn" /></a>
   </div>
+
+  <script>
+    const platformBtns = document.querySelector('.platform-btn-mobile');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        platformBtns.classList.add('hidden');
+      } else {
+        platformBtns.classList.remove('hidden');
+      }
+    });
+  </script>
