@@ -239,13 +239,12 @@ footer {
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s;
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
+  opacity: 1;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .product:hover {
   transform: scale(1.1);
-  box-shadow: 0 10px 20px rgb(255, 165, 0);
+  box-shadow: 0 0px 1.5vh rgb(255, 165, 0);
 }
 .product.show-video .product-video {
   opacity: 1;
@@ -357,9 +356,21 @@ h2 .h2offers {
 
 .news,
 .offers {
-  display: grid;
+  display: block;
   gap: clamp(1rem, 2vw, 2rem);
   padding: 2% 7% 5%;
+}
+.news .carousel-inner,
+.offers .carousel-inner {
+  overflow: hidden;
+  display: flex;
+  padding: 40px 0;
+}
+.news .carousel-control-prev,
+.news .carousel-control-next,
+.offers .carousel-control-prev,
+.offers .carousel-control-next {
+  width: 5%;
 }
 .news .products,
 .offers .products {
@@ -372,16 +383,7 @@ h2 .h2offers {
 }
 .news .products {
   gap: clamp(1rem, 8vw, 10rem);
-  grid-template-columns: repeat(3, auto);
-}
-.news .product:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.news .product:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.news .product:nth-child(3) {
-  animation-delay: 0.3s;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .offers {
@@ -390,28 +392,7 @@ h2 .h2offers {
 }
 .offers .products {
   gap: clamp(1rem, 3vw, 3rem);
-  grid-template-columns: repeat(5, auto);
-}
-.offers .product:nth-child(1) {
-  animation-delay: 0.4s;
-}
-.offers .product:nth-child(2) {
-  animation-delay: 0.5s;
-}
-.offers .product:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.offers .product:nth-child(4) {
-  animation-delay: 0.7s;
-}
-.offers .product:nth-child(5) {
-  animation-delay: 0.8s;
-}
-.offers .product:nth-child(6) {
-  animation-delay: 0.9s;
-}
-.offers .product:nth-child(7) {
-  animation-delay: 1s;
+  grid-template-columns: repeat(5, 1fr);
 }
 .offers .product-text {
   grid-template-columns: 1fr;

@@ -3,23 +3,13 @@ session_start();
 
 $userId = $_SESSION['user_id'] ?? $_COOKIE['user_id'] ?? null;
 $isLogged = !empty($userId);
+
+$pageTitle = "Inicio - BitKeys";
+include __DIR__ . '/../frontend/templates/partials/header.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../frontend/css/styles_index.css" />
-  <title>Document</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet" />
-</head>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -47,62 +37,104 @@ $isLogged = !empty($userId);
   });
 </script>
 
-<?php include __DIR__ . '../../frontend/templates/partials/header.php'; ?>
-
-<body>    
+<body>
 
   <main>
 
+    <!-- SECCIÓN DESTACADA -->
     <section class="featured">
       <video src="video/hollow_knight_silksong.mp4" muted loop autoplay class="featured-background-video"></video>
-      <a href="/frontend/templates/tmp_product.php?id=<?= $product['id']?>" class="featured-link">
+      <a href="/frontend/templates/tmp_product.php?id=3" class="featured-link">
         <h1 class="featured-title">Hollow Knight: Silksong</h1>
         <p class="featured-subtitle">Ya disponible</p>
       </a>
     </section>
 
+    <!-- SECCIÓN NEWS -->
     <section class="news">
       <h2>Últimas novedades</h2>
-      <div class="products">
-        <div class="product">
-          <a href="/frontend/templates/tmp_product.php?id=3">
-            <div class="media-container">
-              <img src="watermark/cover_silksong.jpg" alt="Hollow Knight: Silksong" class="product-image" />
-              <video src="video/hollow_knight_silksong.mp4" muted preload="none" class="product-video"></video>
+      <!-- data-bs-ride=false mantiene el carrusel estático si el usuario no lo toca -->
+      <div id="newsCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="products">
+              <div class="product">
+                <a href="/frontend/templates/tmp_product.php?id=3">
+                  <div class="media-container">
+                    <img src="watermark/cover_silksong.jpg" alt="Hollow Knight: Silksong" class="product-image" />
+                    <video src="video/hollow_knight_silksong.mp4" muted preload="none" class="product-video"></video>
+                  </div>
+                  <div class="product-text">
+                    <p class="title">Hollow Knight: Silksong</p>
+                    <p class="price">20.00€</p>
+                  </div>
+                </a>
+              </div>
+              <div class="product">
+                <a href="/frontend/templates/tmp_product.php?id=5">
+                  <div class="media-container">
+                    <img src="watermark/cover_celeste.jpg" alt="Celeste" class="product-image" />
+                    <video src="video/celeste.mp4" muted preload="none" class="product-video"></video>
+                  </div>
+                  <div class="product-text">
+                    <p class="title">Celeste</p>
+                    <p class="price">20.00€</p>
+                  </div>
+                </a>
+              </div>
+              <div class="product" id="baldurs-gate">
+                <a href="/frontend/templates/tmp_product.php?id=4">
+                  <div class="media-container">
+                    <img src="watermark/cover_baldurs_gate.jpg" alt="Baldur's Gate III" class="product-image" />
+                    <video src="video/baldurs_gate.mp4" muted preload="none" class="product-video"></video>
+                  </div>
+                  <div class="product-text">
+                    <p class="title">Baldur's Gate III</p>
+                    <p class="price">40.00€</p>
+                  </div>
+                </a>
+              </div>
             </div>
-            <div class="product-text">
-              <p class="title">Hollow Knight: Silksong</p>
-              <p class="price">20.00€</p>
+          </div>
+          <div class="carousel-item">
+            <div class="products">
+              <div class="product">
+                <a href="/frontend/templates/tmp_product.php?id=3">
+                  <div class="media-container">
+                    <img src="watermark/cover_silksong.jpg" alt="Hollow Knight: Silksong" class="product-image" />
+                    <video src="video/hollow_knight_silksong.mp4" muted preload="none" class="product-video"></video>
+                  </div>
+                  <div class="product-text">
+                    <p class="title">Hollow Knight: Silksong</p>
+                    <p class="price">20.00€</p>
+                  </div>
+                </a>
+              </div>              
+              <div class="product">
+                <a href="/frontend/templates/tmp_product.php?id=3">
+                  <div class="media-container">
+                    <img src="watermark/cover_silksong.jpg" alt="Hollow Knight: Silksong" class="product-image" />
+                    <video src="video/hollow_knight_silksong.mp4" muted preload="none" class="product-video"></video>
+                  </div>
+                  <div class="product-text">
+                    <p class="title">Hollow Knight: Silksong</p>
+                    <p class="price">20.00€</p>
+                  </div>
+                </a>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
-        <div class="product">
-          <a href="/frontend/templates/tmp_product.php?id=5">
-            <div class="media-container">
-              <img src="watermark/cover_celeste.jpg" alt="Celeste" class="product-image" />
-              <video src="video/celeste.mp4" muted preload="none" class="product-video"></video>
-            </div>
-            <div class="product-text">
-              <p class="title">Celeste</p>
-              <p class="price">20.00€</p>
-            </div>
-          </a>
-        </div>
-        <div class="product" id="baldurs-gate">
-          <a href="/frontend/templates/tmp_product.php?id=4">
-            <div class="media-container">
-              <img src="watermark/cover_baldurs_gate.jpg" alt="Baldur's Gate III" class="product-image" />
-              <video src="video/baldurs_gate.mp4" muted preload="none" class="product-video"></video>
-            </div>
-            <div class="product-text">
-              <p class="title">Baldur's Gate III</p>
-              <p class="price">40.00€</p>
-            </div>
-          </a>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
       </div>
     </section>
 
+    <!-- SECCIÓN OFFERS -->
     <section class="offers">
       <h2>Ofertas</h2>
       <div class="products">
@@ -179,27 +211,3 @@ $isLogged = !empty($userId);
 </body>
 
 </html>
-
-<!-- 
-<body>
-    <h1>Bienvenido</h1>
-
-    <?php if ($isLogged): ?>
-        <p>Iniciado sesión como: <strong><?= htmlspecialchars($username) ?></strong></p>
-        <ul>
-            <li><a href="../frontend/templates/profile.php">Profile</a></li>
-            <form method="POST" action="../backend/src/auth/logout.php">
-                <button type="submit">Cerrar sesión</button>
-            </form>
-        </ul>
-    <?php else: ?>
-        <p>No estás registrado todavía!</p>
-        <ul>
-            <li><a href="../frontend/templates/register.php">Register</a></li>
-            <li><a href="../frontend/templates/login.php">Login</a></li>
-        </ul>
-    <?php endif; ?>
-</body>
-
-</html>
-    -->

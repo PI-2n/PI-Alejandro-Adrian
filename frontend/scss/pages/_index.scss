@@ -9,8 +9,13 @@ h2 {
   margin-left: -4vw;
   color: $color-text;
 
-  .h2news { background-color: $color-bg-secondary; }
-  .h2offers { background-color: $color-bg-tertiary; }
+  .h2news {
+    background-color: $color-bg-secondary;
+  }
+
+  .h2offers {
+    background-color: $color-bg-tertiary;
+  }
 }
 
 .featured {
@@ -58,9 +63,20 @@ h2 {
 
 .news,
 .offers {
-  display: grid;
+  display: block;
   gap: clamp(1rem, 2vw, 2rem);
   padding: 2% 7% 5%;
+
+  .carousel-inner {
+    overflow: hidden; // Cambiamos a hidden para controlar el scroll nosotros
+    display: flex;
+    padding: 40px 0;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+  }  
 
   .products {
     display: grid;
@@ -73,14 +89,14 @@ h2 {
 
   .products {
     gap: clamp(1rem, 8vw, 10rem);
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @for $i from 1 through $num-prods-news {
-    .product:nth-child(#{$i}) {
-      animation-delay: #{$i * 0.1}s;
-    }
-  }
+  //@for $i from 1 through $num-prods-news {
+  //.product:nth-child(#{$i}) {
+  //animation-delay: #{$i * 0.1}s;
+  //}
+  //}
 }
 
 .offers {
@@ -89,14 +105,14 @@ h2 {
 
   .products {
     gap: clamp(1rem, 3vw, 3rem);
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(5, 1fr);
   }
 
-  @for $i from 1 through $num-prods-offers {
-    .product:nth-child(#{$i}) {
-      animation-delay: #{0.3s + ($i * 0.1s)};
-    }
-  }
+  //@for $i from 1 through $num-prods-offers {
+  //.product:nth-child(#{$i}) {
+  //animation-delay: #{0.3s + ($i * 0.1s)};
+  //}
+  //}
 
   .product-text {
     grid-template-columns: 1fr;
