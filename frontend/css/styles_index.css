@@ -38,16 +38,6 @@ main {
     transform: translateY(0);
   }
 }
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 header {
   display: grid;
   grid-template-areas: "logo search buttons";
@@ -234,69 +224,6 @@ footer {
   margin-top: auto;
 }
 
-.product {
-  background-color: #202020;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.3s;
-  opacity: 1;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.product:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0px 1.5vh rgb(255, 165, 0);
-}
-.product.show-video .product-video {
-  opacity: 1;
-}
-.product.show-video .product-image {
-  opacity: 0.3;
-}
-.product a {
-  text-decoration: none;
-  color: inherit;
-}
-.product a img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: fill;
-  border-bottom: 1px solid #333;
-}
-
-.product-text {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  padding: 0.5rem 1rem;
-  font-weight: 400;
-  align-items: center;
-  color: white;
-}
-.product-text .price {
-  font-weight: 700;
-}
-
-.media-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-.media-container .product-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.product-image,
-.product-video {
-  width: 100%;
-  aspect-ratio: 3/4;
-  display: block;
-  object-fit: scale-down;
-  transition: opacity 0.3s ease;
-}
-
 main {
   display: grid;
   grid-template-areas: "featured" "news" "offers";
@@ -357,12 +284,11 @@ h2 .h2offers {
 .news,
 .offers {
   display: block;
-  gap: clamp(1rem, 2vw, 2rem);
   padding: 2% 7% 5%;
 }
 .news .carousel-inner,
 .offers .carousel-inner {
-  overflow: visible;
+  overflow: hidden;
   display: flex;
 }
 .news .carousel-control-prev,
@@ -400,7 +326,82 @@ h2 .h2offers {
   text-align: center;
 }
 
+.product {
+  background-color: #202020;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  opacity: 1;
+  margin-left: 1vh;
+  margin-right: 1vh;
+  transition: box-shadow 0.2s;
+}
+.product:hover {
+  box-shadow: 0 0px 1.5vh rgb(255, 165, 0);
+}
+.product.show-video .product-video {
+  opacity: 1;
+}
+.product.show-video .product-image {
+  opacity: 0.3;
+}
+.product a {
+  text-decoration: none;
+  color: inherit;
+}
+.product a img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: fill;
+  border-bottom: 1px solid #333;
+}
+
+.product-text {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+  align-items: center;
+  color: white;
+}
+.product-text .price {
+  font-weight: 700;
+}
+
+.media-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.media-container .product-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.product-image,
+.product-video {
+  width: 100%;
+  aspect-ratio: 3/4;
+  display: block;
+  object-fit: scale-down;
+  transition: opacity 0.3s ease;
+}
+
 @media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  main {
+    grid-template-areas: "news" "offers";
+  }
+  .featured {
+    display: none !important;
+  }
   h2 {
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
     margin-left: 0;

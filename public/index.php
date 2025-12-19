@@ -48,8 +48,7 @@ include __DIR__ . '/../frontend/templates/partials/header.php';
   <!-- SECCIÓN NEWS -->
   <section class="news">
     <h2>Últimas novedades</h2>
-    <!-- data-bs-ride=false mantiene el carrusel estático si el usuario no lo toca -->
-    <div id="newsCarousel" class="carousel slide" data-bs-ride="false">
+    <div id="newsCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="products">
@@ -127,6 +126,7 @@ include __DIR__ . '/../frontend/templates/partials/header.php';
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </button>
     </div>
+
   </section>
 
   <!-- SECCIÓN OFFERS -->
