@@ -2,7 +2,7 @@
 /* FUENTE  */
 /* COLORES  */
 /* VARIABLES DE CONFIGURACIÓN */
-main {
+.register-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,8 +10,7 @@ main {
   min-height: 80vh;
   padding: 20px;
 }
-
-form {
+.register-page form {
   background-color: #202020;
   padding: 2rem;
   border-radius: 15px;
@@ -19,11 +18,13 @@ form {
   max-width: 400px;
   color: white;
 }
-form label {
+.register-page form label {
   display: block;
   margin-bottom: 0.5rem;
+  font-weight: bold;
+  position: relative; /* necesario para posición absoluta del error */
 }
-form input {
+.register-page form input {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -31,14 +32,30 @@ form input {
   border: none;
   border-radius: 5px;
   color: white;
+  box-sizing: border-box;
+  display: block;
 }
-form input:focus {
-  outline: 2px solid rgba(221, 119, 16, 0.9254901961);
+.register-page form input:focus {
+  outline: 2px solid rgba(221, 119, 16, 0.925);
 }
-form button {
+.register-page form .error {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 0.75rem;
+  margin-top: 2.5rem;
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  display: none;
+}
+.register-page form .error:not(:empty) {
+  display: block;
+}
+.register-page form button {
   width: 100%;
   padding: 1rem;
-  background-color: rgba(221, 119, 16, 0.9254901961);
+  background-color: rgba(221, 119, 16, 0.925);
   border: none;
   border-radius: 5px;
   color: white;
@@ -46,8 +63,20 @@ form button {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-form button:hover {
+.register-page form button:hover {
   background-color: rgb(255, 165, 0);
+}
+.register-page p {
+  margin-top: 1rem;
+  color: white;
+}
+.register-page p a {
+  color: rgba(221, 119, 16, 0.925);
+  text-decoration: none;
+  font-weight: bold;
+}
+.register-page p a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=register.css.map */

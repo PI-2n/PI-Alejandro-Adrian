@@ -1,3 +1,68 @@
-@import 'base/variables';
-@import 'base/mixins';
-@import 'pages/login';
+@import "base/variables";
+@import "base/mixins";
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 20px;
+
+  form {
+    background-color: #202020;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    color: white;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      background-color: #333333;
+      border: none;
+      border-radius: 5px;
+      color: white;
+
+      &:focus {
+        outline: 2px solid rgba(221, 119, 16, 0.9254901961);
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 1rem;
+      background-color: rgba(221, 119, 16, 0.9254901961);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgb(255, 165, 0);
+      }
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    color: white;
+    a {
+      color: rgba(221, 119, 16, 0.9254901961);
+      text-decoration: none;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

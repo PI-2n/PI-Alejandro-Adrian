@@ -2,7 +2,7 @@
 /* FUENTE  */
 /* COLORES  */
 /* VARIABLES DE CONFIGURACIÓN */
-main {
+.login-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,8 +10,7 @@ main {
   min-height: 80vh;
   padding: 20px;
 }
-
-form {
+.login-page form {
   background-color: #202020;
   padding: 2rem;
   border-radius: 15px;
@@ -19,11 +18,11 @@ form {
   max-width: 400px;
   color: white;
 }
-form label {
+.login-page form label {
   display: block;
   margin-bottom: 0.5rem;
 }
-form input {
+.login-page form input {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -32,10 +31,10 @@ form input {
   border-radius: 5px;
   color: white;
 }
-form input:focus {
+.login-page form input:focus {
   outline: 2px solid rgba(221, 119, 16, 0.9254901961);
 }
-form button {
+.login-page form button {
   width: 100%;
   padding: 1rem;
   background-color: rgba(221, 119, 16, 0.9254901961);
@@ -46,8 +45,20 @@ form button {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-form button:hover {
+.login-page form button:hover {
   background-color: rgb(255, 165, 0);
+}
+.login-page p {
+  margin-top: 1rem;
+  color: white;
+}
+.login-page p a {
+  color: rgba(221, 119, 16, 0.9254901961);
+  text-decoration: none;
+  font-weight: bold;
+}
+.login-page p a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=login.css.map */

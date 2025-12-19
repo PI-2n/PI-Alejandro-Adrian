@@ -1,11 +1,10 @@
 <?php
-session_start(); // SIEMPRE PRIMERO
+session_start();
 $pageTitle = 'Login';
-$customCss = '/frontend/css/styles_login.css';
+$customCss = '/frontend/css/login.css';
 
 $userId = $_SESSION['user_id'] ?? $_COOKIE['user_id'] ?? null;
 if ($userId) {
-  // Redirigir al controlador del perfil para cargar datos
   header('Location: /backend/src/auth/profile.php');
   exit;
 }
@@ -14,18 +13,20 @@ $error = $_SESSION['error'] ?? '';
 unset($_SESSION['error']);
 ?>
 
-<?php include __DIR__ . '/partials/header.php';?>
+<?php include __DIR__ . '/partials/header.php'; ?>
 
-<?php if ($error): ?>
-  <p style="color: red;"><?= htmlspecialchars($error) ?></p>
-<?php endif; ?>
+<main class="login-page">
+  <?php if ($error): ?>
+    <p class="login-error" style="color: red; margin-bottom: 1rem;"><?= htmlspecialchars($error) ?></p>
+  <?php endif; ?>
 
-<form method="POST" action="/backend/src/auth/login.php">
-  <label>Usuario: <input type="text" name="username" required></label><br>
-  <label>Contraseña: <input type="password" name="password" required></label><br>
-  <button type="submit">Login</button>
-</form>
+  <form method="POST" action="/backend/src/auth/login.php">
+    <label>Usuario: <input type="text" name="username" required></label><br>
+    <label>Contraseña: <input type="password" name="password" required></label><br>
+    <button type="submit">Login</button>
+  </form>
 
-<p>No tienes cuenta? <a href="tmp_register.php"><b>Regístrate</b></a></p>
+  <p>No tienes cuenta? <a href="tmp_register.php"><b>Regístrate</b></a></p>
+</main>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>

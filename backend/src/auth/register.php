@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lastName = trim($_POST['lastName'] ?? '');
 
     if ($username === '' || $email === '' || $password === '') {
-        $_SESSION['error'] = "Por favor rellene los campos necesarios";
+        //$_SESSION['error'] = "Por favor rellene los campos necesarios";
         header('Location: /backend/src/auth/register.php');
         exit;
     } else {
