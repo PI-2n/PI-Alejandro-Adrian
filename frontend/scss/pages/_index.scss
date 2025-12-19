@@ -64,7 +64,7 @@ h2 {
 .news,
 .offers {
   display: block;
-  padding: 2% 7% 5%;
+  padding: 2% 6% 5%;
 
   .carousel-inner {
     overflow: hidden;
@@ -73,7 +73,11 @@ h2 {
 
   .carousel-control-prev,
   .carousel-control-next {
-    width: 5%;
+    width: 3%;
+    background-color: black;
+    border-radius: 50px;
+    height: 4vw;
+    align-self: center;
   }
 
   .products {
@@ -87,7 +91,7 @@ h2 {
   background-color: $color-bg-secondary;
 
   .products {
-    gap: clamp(1rem, 8vw, 10rem);
+    gap: clamp(1rem, 1vw, 10rem);
     grid-template-columns: repeat(3, 1fr);
     padding: 40px 0;
   }
@@ -192,6 +196,7 @@ h2 {
 }
 
 @media (max-width: 768px) {
+
   // ✅ Asegurar que nada desborde horizontalmente
   html,
   body {
@@ -218,46 +223,9 @@ h2 {
     padding: 2% 0 3%;
     background-color: $color-bg-secondary;
 
-    // ✅ Ocultar los controles del carrusel
-    .carousel-control-prev,
-    .carousel-control-next {
-      display: none !important;
-    }
-
-    // ✅ Aplicar scroll horizontal DIRECTAMENTE al .products dentro del carrusel
-    .carousel-inner>.carousel-item>.products {
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      gap: 1.5rem;
-      padding: 1.5rem 1rem;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x proximity;
-    }
-
-    // ✅ Forzar a los productos a ser elementos flex en línea
-    .carousel-inner>.carousel-item>.products>.product {
-      flex: 0 0 auto;
-      width: 180px;
-      scroll-snap-align: start;
-    }
-
     .product-text {
-      padding: 0.5rem 0;
+      grid-template-columns: 1fr;
       text-align: center;
-
-      .title {
-        font-size: 0.9rem;
-        margin: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .price {
-        font-size: 0.85rem;
-        margin: 0.2rem 0 0;
-      }
     }
   }
 
@@ -311,37 +279,4 @@ h2 {
     }
   }
 
-  // --- Carrusel: botones más accesibles ---
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 8%;
-    opacity: 0.8;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-  }
-
-  // --- Desactivar todos los efectos de hover en móvil ---
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-    animation: none !important;
-  }
-
-  // Anular hover
-  *:hover {
-    transform: none !important;
-    filter: none !important;
-    box-shadow: none !important;
-    border-color: inherit !important;
-    outline: none !important;
-  }
 }
