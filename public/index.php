@@ -116,6 +116,18 @@ include __DIR__ . '/../frontend/templates/partials/header.php';
                 </div>
               </a>
             </div>
+            <div class="product">
+              <a href="/frontend/templates/tmp_product.php?id=3">
+                <div class="media-container">
+                  <img src="watermark/cover_silksong.jpg" alt="Hollow Knight: Silksong" class="product-image" />
+                  <video src="video/hollow_knight_silksong.mp4" muted preload="none" class="product-video"></video>
+                </div>
+                <div class="product-text">
+                  <p class="title">Hollow Knight: Silksong</p>
+                  <p class="price">20.00€</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -295,11 +295,19 @@ h2 .h2offers {
 .news .carousel-control-next,
 .offers .carousel-control-prev,
 .offers .carousel-control-next {
+  margin: -4vw;
   width: 3%;
   background-color: black;
   border-radius: 50px;
   height: 4vw;
   align-self: center;
+  transition: 0.2s;
+}
+.news .carousel-control-prev:hover,
+.news .carousel-control-next:hover,
+.offers .carousel-control-prev:hover,
+.offers .carousel-control-next:hover {
+  background-color: rgb(255, 165, 0);
 }
 .news .products,
 .offers .products {
@@ -420,6 +428,13 @@ h2 .h2offers {
     grid-template-columns: 1fr;
     text-align: center;
   }
+  .news .carousel-control-prev,
+  .news .carousel-control-next {
+    margin: 0vw;
+    width: 5%;
+    border-radius: 50px;
+    height: 7vw;
+  }
   .offers {
     padding: 2% 0 3%;
     overflow: hidden;
@@ -457,6 +472,22 @@ h2 .h2offers {
   .product .media-container {
     aspect-ratio: 2/3;
     object-fit: cover;
+  }
+}
+@media (max-width: 1024px) {
+  .products {
+    font-size: 1.25rem;
+  }
+  .offers {
+    grid-area: offers;
+    background-color: #252525;
+  }
+  .offers .products {
+    gap: clamp(1rem, 2vw, 3rem);
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .featured {
+    display: none !important;
   }
 }
 
