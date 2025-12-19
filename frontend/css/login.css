@@ -9,14 +9,15 @@
   justify-content: center;
   min-height: 80vh;
   padding: 20px;
+  background-color: #1a1a1a;
 }
 .login-page form {
-  background-color: #202020;
+  background-color: #252525;
   padding: 2rem;
   border-radius: 15px;
   width: 100%;
   max-width: 400px;
-  color: white;
+  color: #fff;
 }
 .login-page form label {
   display: block;
@@ -29,7 +30,7 @@
   background-color: #333333;
   border: none;
   border-radius: 5px;
-  color: white;
+  color: #fff;
 }
 .login-page form input:focus {
   outline: 2px solid rgba(221, 119, 16, 0.9254901961);
@@ -40,7 +41,7 @@
   background-color: rgba(221, 119, 16, 0.9254901961);
   border: none;
   border-radius: 5px;
-  color: white;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -50,7 +51,7 @@
 }
 .login-page p {
   margin-top: 1rem;
-  color: white;
+  color: #fff;
 }
 .login-page p a {
   color: rgba(221, 119, 16, 0.9254901961);
