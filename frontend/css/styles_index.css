@@ -400,4 +400,115 @@ h2 .h2offers {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    margin-left: 0;
+    text-align: left;
+    padding: 0 1rem;
+  }
+  .news {
+    padding: 2% 0 3%;
+    background-color: #1a1a1a;
+  }
+  .news .carousel-control-prev,
+  .news .carousel-control-next {
+    display: none !important;
+  }
+  .news .carousel-inner > .carousel-item > .products {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+  .news .carousel-inner > .carousel-item > .products > .product {
+    flex: 0 0 auto;
+    width: 180px;
+    scroll-snap-align: start;
+  }
+  .news .product-text {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+  .news .product-text .title {
+    font-size: 0.9rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .news .product-text .price {
+    font-size: 0.85rem;
+    margin: 0.2rem 0 0;
+  }
+  .offers {
+    padding: 2% 0 3%;
+    overflow: hidden;
+  }
+  .offers .products {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 1.5rem 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    margin-left: 15px;
+  }
+  .offers .product {
+    flex: 0 0 auto;
+    width: 140px;
+    scroll-snap-align: start;
+  }
+  .offers .product-text {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+  .offers .product-text .title {
+    font-size: 0.9rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .offers .product-text .price {
+    font-size: 0.85rem;
+    margin: 0.2rem 0 0;
+  }
+  .product img,
+  .product .media-container {
+    aspect-ratio: 2/3;
+    object-fit: cover;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 8%;
+    opacity: 0.8;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+  *:hover {
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    border-color: inherit !important;
+    outline: none !important;
+  }
+}
+
 /*# sourceMappingURL=styles_index.css.map */
