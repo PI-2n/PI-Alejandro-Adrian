@@ -1,9 +1,8 @@
 <?php
-session_start(); // SIEMPRE PRIMERO
+session_start();
 
 require_once __DIR__ . '/../../backend/src/includes/json_connect.php';
 
-// 1. Obtener ID del producto de la URL
 $productId = $_GET['id'] ?? null;
 
 if (!$productId) {
@@ -11,12 +10,8 @@ if (!$productId) {
     exit;
 }
 
-// 2. Pedir datos del producto a la API
-// TRUCO: Usamos ?id= en vez de /id. Esto devuelve un ARRAY con 1 resultado.
-// Es más seguro porque a json-server le da igual si es número o texto.
 $prodResponse = jsonRequest('GET', "/products?id=" . $productId);
 
-// Como devuelve un array (lista), cogemos el primero [0]
 $product = $prodResponse['data'][0] ?? null;
 
 if (!$product) {
@@ -24,15 +19,12 @@ if (!$product) {
     exit;
 }
 
-// 3. Pedir comentarios de ESTE producto a la API
 $commResponse = jsonRequest('GET', "/comments?product_id=" . $productId);
 $comments = $commResponse['data'] ?? [];
 
-// Título de la pestaña
 $pageTitle = $product['nom'];
 $customCss = '/frontend/css/styles_product.css';
 
-// Recuperar mensajes de error/éxito de la sesión
 $msgSuccess = $_SESSION['success_comment'] ?? null;
 $msgError = $_SESSION['error_comment'] ?? null;
 unset($_SESSION['success_comment'], $_SESSION['error_comment']);
@@ -61,7 +53,7 @@ unset($_SESSION['success_comment'], $_SESSION['error_comment']);
             </p>
 
             <button style="padding: 15px 30px; background-color: black; color: white; border: none; cursor: pointer; font-size: 1.1rem; margin-top: 20px;">
-                Afegir al Carret
+                Añadir al carrito
             </button>
         </div>
     </div>
@@ -69,7 +61,7 @@ unset($_SESSION['success_comment'], $_SESSION['error_comment']);
     <hr>
 
     <section class="comments-section" style="margin-top: 40px;">
-        <h2>Opinions dels usuaris (<?= count($comments) ?>)</h2>
+        <h2 style="color: black;">Comentarios</h2>
 
         <?php if ($msgSuccess): ?>
             <p style="color: green; background: #d4edda; padding: 10px; border-radius: 5px;"><?= htmlspecialchars($msgSuccess) ?></p>
@@ -80,14 +72,14 @@ unset($_SESSION['success_comment'], $_SESSION['error_comment']);
 
         <div class="comments-list" style="margin-top: 20px;">
             <?php if (empty($comments)): ?>
-                <p>Encara no hi ha comentaris. Sigues el primer en opinar!</p>
+                <p>Todavía no hay comentarios de este producto.</p>
             <?php else: ?>
                 <?php foreach ($comments as $comment): ?>
                     <div class="comment-item" style="border-bottom: 1px solid #eee; padding: 15px 0;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
                             <strong><?= htmlspecialchars($comment['username']) ?></strong>
-                            <span style="color: #f39c12;">
-                                <?= str_repeat('⭐', $comment['rating']) ?>
+                            <span style="color: #000000ff;">
+                                ⭐ <?= $comment['rating']?>
                             </span>
                         </div>
                         <p style="margin: 5px 0;"><?= htmlspecialchars($comment['comment']) ?></p>
