@@ -1,16 +1,179 @@
-.product-detail {
+// scss/pages/_product.scss
+
+.product-page-main {
+    background-color: $color-bg-tertiary; // El color de "offers"
+    min-height: calc(100vh - 160px); // Asegura que el fondo cubra hasta el footer
+    width: 100%;
+    display: block;
+}
+
+.product-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px; // Un poco más de aire arriba y abajo
     color: $color-text;
+
+    .product-detail {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 40px;
+        align-items: flex-start;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    .product-image {
+        flex: 1;
+        img {
+            width: 100%;
+            border-radius: 15px; // Un poco más redondeado como tus productos en el index
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            object-fit: cover;
+            background-color: $color-card;
+        }
+    }
+
+    .product-info {
+        flex: 1;
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem); // Fluido como tus h2 del index
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: $color-text;
+        }
+
+        .sku {
+            color: $color-separator;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: $color-accent; // Usamos el naranja de tu proyecto
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .description {
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: rgba($color-text, 0.9);
+        }
+
+        .stock {
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            background-color: $color-bg-input;
+            
+            &.in-stock { color: #2ecc71; }
+            &.out-of-stock { color: #e74c3c; }
+        }
+
+        .btn-add-cart {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            padding: 18px;
+            background-color: $color-accent;
+            color: white;
+            border: none;
+            border-radius: 50px; // Estilo botón moderno
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $color-accent-hover;
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba($color-accent, 0.4);
+            }
+        }
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid $color-bg-input;
+        margin: 60px 0;
+    }
+
+    .comments-section {
+        h2 {
+            color: $color-text;
+            margin-bottom: 20px;
+        }
+
+        .msg-alert {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            
+            &.success { background: #1b4332; color: #75ec9f; }
+            &.error { background: #4a1212; color: #ff8a8a; }
+        }
+
+        .comment-item {
+            border-bottom: 1px solid $color-bg-input;
+            padding: 15px 0;
+
+            .comment-header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+
+                .rating { color: $color-accent; }
+            }
+
+            .comment-date {
+                display: block;
+                color: $color-separator;
+                font-size: 0.85rem;
+            }
+        }
+    }
+}
+
+// Estilos para el formulario de comentario (tmp_comment.php)
+.comment-form-container {
+    margin-top: 30px;
+    padding: 20px;
     background-color: $color-bg-secondary;
-    padding: 2rem;
-    border-radius: 15px;
-    
-    h1 { color: $color-accent; }
-}
+    border-radius: 8px;
 
-.comments-section {
-    color: $color-text;
-}
+    h3 { margin-bottom: 15px; }
 
-.comment-item {
-    border-bottom: 1px solid $color-separator !important;
+    .form-group {
+        margin-bottom: 15px;
+        
+        label { display: block; margin-bottom: 5px; }
+        
+        select, textarea {
+            background-color: $color-bg-input;
+            border: 1px solid $color-separator;
+            color: $color-text;
+            padding: 10px;
+            border-radius: 4px;
+            width: 100%;
+        }
+    }
+
+    .btn-submit {
+        width: auto;
+        padding: 10px 20px;
+        background-color: $color-accent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover { background-color: $color-accent-hover; }
+    }
 }

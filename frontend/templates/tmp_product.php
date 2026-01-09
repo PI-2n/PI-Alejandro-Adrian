@@ -23,7 +23,7 @@ $commResponse = jsonRequest('GET', "/comments?product_id=" . $productId);
 $comments = $commResponse['data'] ?? [];
 
 $pageTitle = $product['nom'];
-$customCss = '/frontend/css/styles_product.css';
+$customCss = '/frontend/css/product.css';
 
 $msgSuccess = $_SESSION['success_comment'] ?? null;
 $msgError = $_SESSION['error_comment'] ?? null;
@@ -32,67 +32,70 @@ unset($_SESSION['success_comment'], $_SESSION['error_comment']);
 
 <?php include __DIR__ . '/partials/header.php'; ?>
 
-<main style="max-width: 1200px; margin: 0 auto; padding: 20px;">
-    
-    <div class="product-detail" style="display: flex; gap: 40px; margin-bottom: 40px;">
-        <div class="product-image" style="flex: 1;">
-             <img src="/<?= htmlspecialchars($product['img']) ?>" alt="<?= htmlspecialchars($product['nom']) ?>" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+<div class="product-page-main">
+
+    <main class="product-page-container">
+
+        <div class="product-detail">
+            <div class="product-image">
+                <img src="/<?= htmlspecialchars($product['img']) ?>" alt="<?= htmlspecialchars($product['nom']) ?>">
+            </div>
+
+            <div class="product-info">
+                <h1><?= htmlspecialchars($product['nom']) ?></h1>
+                <p class="sku">SKU: <?= htmlspecialchars($product['sku']) ?></p>
+                <p class="price"><?= htmlspecialchars($product['preu']) ?>€</p>
+
+                <p class="description">
+                    <?= htmlspecialchars($product['descripcio']) ?>
+                </p>
+
+                <div class="stock <?= $product['estoc'] > 0 ? 'in-stock' : 'out-of-stock' ?>">
+                    <strong>Estoc:</strong> <?= htmlspecialchars($product['estoc']) ?> unitats
+                </div>
+
+                <button class="btn-add-cart">
+                    Añadir al carrito
+                </button>
+            </div>
         </div>
-        
-        <div class="product-info" style="flex: 1;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 10px;"><?= htmlspecialchars($product['nom']) ?></h1>
-            <p style="color: #666; font-size: 1.2rem;">SKU: <?= htmlspecialchars($product['sku']) ?></p>
-            <p style="font-size: 2rem; color: #333; font-weight: bold; margin: 20px 0;"><?= htmlspecialchars($product['preu']) ?>€</p>
-            
-            <p class="description" style="line-height: 1.6; margin-bottom: 30px;">
-                <?= htmlspecialchars($product['descripcio']) ?>
-            </p>
-            
-            <p style="color: <?= $product['estoc'] > 0 ? 'green' : 'red' ?>">
-                <strong>Estoc:</strong> <?= htmlspecialchars($product['estoc']) ?> unitats
-            </p>
 
-            <button style="padding: 15px 30px; background-color: black; color: white; border: none; cursor: pointer; font-size: 1.1rem; margin-top: 20px;">
-                Añadir al carrito
-            </button>
-        </div>
-    </div>
+        <hr>
 
-    <hr>
+        <section class="comments-section">
+            <h2>Comentarios</h2>
 
-    <section class="comments-section" style="margin-top: 40px;">
-        <h2 style="color: black;">Comentarios</h2>
-
-        <?php if ($msgSuccess): ?>
-            <p style="color: green; background: #d4edda; padding: 10px; border-radius: 5px;"><?= htmlspecialchars($msgSuccess) ?></p>
-        <?php endif; ?>
-        <?php if ($msgError): ?>
-            <p style="color: red; background: #f8d7da; padding: 10px; border-radius: 5px;"><?= htmlspecialchars($msgError) ?></p>
-        <?php endif; ?>
-
-        <div class="comments-list" style="margin-top: 20px;">
-            <?php if (empty($comments)): ?>
-                <p>Todavía no hay comentarios de este producto.</p>
-            <?php else: ?>
-                <?php foreach ($comments as $comment): ?>
-                    <div class="comment-item" style="border-bottom: 1px solid #eee; padding: 15px 0;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <strong><?= htmlspecialchars($comment['username']) ?></strong>
-                            <span style="color: #000000ff;">
-                                ⭐ <?= $comment['rating']?>
-                            </span>
-                        </div>
-                        <p style="margin: 5px 0;"><?= htmlspecialchars($comment['comment']) ?></p>
-                        <small style="color: #999;"><?= date('d/m/Y', strtotime($comment['date'])) ?></small>
-                    </div>
-                <?php endforeach; ?>
+            <?php if ($msgSuccess): ?>
+                <p class="msg-alert success"><?= htmlspecialchars($msgSuccess) ?></p>
             <?php endif; ?>
-        </div>
+            <?php if ($msgError): ?>
+                <p class="msg-alert error"><?= htmlspecialchars($msgError) ?></p>
+            <?php endif; ?>
 
-        <?php include __DIR__ . '/tmp_comment.php'; ?>
+            <div class="comments-list">
+                <?php if (empty($comments)): ?>
+                    <p>Todavía no hay comentarios de este producto.</p>
+                <?php else: ?>
+                    <?php foreach ($comments as $comment): ?>
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <strong><?= htmlspecialchars($comment['username']) ?></strong>
+                                <span class="rating">
+                                    ⭐ <?= $comment['rating'] ?>
+                                </span>
+                            </div>
+                            <p><?= htmlspecialchars($comment['comment']) ?></p>
+                            <small class="comment-date"><?= date('d/m/Y', strtotime($comment['date'])) ?></small>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
 
-    </section>
+            <?php include __DIR__ . '/tmp_comment.php'; ?>
 
-</main>
+        </section>
+
+    </main>
+</div>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>
