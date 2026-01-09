@@ -140,6 +140,12 @@ header .header_image img:hover {
   filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%) hue-rotate(358deg) brightness(101%) contrast(93%);
   transform: scale(1.3);
 }
+.platform-btn-container .platform-btn.active,
+.platform-btn-container .user-btn.active,
+.user-btn-container .platform-btn.active,
+.user-btn-container .user-btn.active {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(746%) hue-rotate(358deg) brightness(101%) contrast(93%);
+}
 
 .platform-btn-mobile {
   display: none;

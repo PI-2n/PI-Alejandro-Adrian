@@ -7,76 +7,133 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
-  padding: 20px;
+  min-height: 85vh;
+  padding: 40px 20px;
   background-color: #1a1a1a;
+}
+.register-page .status-msg {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.register-page .status-msg.success {
+  color: #2ecc71;
+}
+.register-page .status-msg.error {
+  color: #ff4d4d;
 }
 .register-page form {
   background-color: #252525;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 15px;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 .register-page form label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  position: relative; /* necesario para posición absoluta del error */
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
 }
 .register-page form input {
   width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  margin-top: 0.5rem;
   background-color: #333333;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid transparent;
+  border-radius: 8px;
   color: #fff;
   box-sizing: border-box;
   display: block;
+  transition: all 0.3s ease;
 }
 .register-page form input:focus {
-  outline: 2px solid rgba(221, 119, 16, 0.9254901961);
+  outline: none;
+  border-color: rgba(221, 119, 16, 0.9254901961);
+  box-shadow: 0 0 0 2px rgba(221, 119, 16, 0.2);
+}
+.register-page form input.is-invalid {
+  border-color: #ff4d4d;
 }
 .register-page form .error {
   position: absolute;
-  top: 0;
-  left: 100%;
-  margin-left: 0.75rem;
-  margin-top: 2.5rem;
+  left: calc(100% + 20px);
+  bottom: 12px;
   color: #ff4d4d;
   font-size: 0.85rem;
-  display: none;
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+.register-page form .error::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .register-page form .error:not(:empty) {
-  display: block;
+  opacity: 1;
+  transform: translateX(0);
 }
 .register-page form button {
   width: 100%;
   padding: 1rem;
+  margin-top: 1rem;
   background-color: rgba(221, 119, 16, 0.9254901961);
   border: none;
-  border-radius: 5px;
-  color: #fff;
+  border-radius: 8px;
+  color: white;
   font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 .register-page form button:hover {
   background-color: rgb(255, 165, 0);
+  transform: translateY(-2px);
+}
+.register-page form button:active {
+  transform: translateY(0);
 }
 .register-page p {
-  margin-top: 1rem;
-  color: #fff;
+  margin-top: 1.5rem;
+  color: #777777;
+  font-size: 0.9rem;
 }
 .register-page p a {
   color: rgba(221, 119, 16, 0.9254901961);
   text-decoration: none;
   font-weight: bold;
+  margin-left: 5px;
 }
 .register-page p a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .register-page form .error {
+    position: static;
+    display: block;
+    margin-top: 5px;
+    white-space: normal;
+    opacity: 1;
+    transform: none;
+    background: none;
+    padding: 0;
+  }
+  .register-page form .error::before {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=register.css.map */

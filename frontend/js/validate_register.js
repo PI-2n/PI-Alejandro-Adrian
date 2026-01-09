@@ -11,49 +11,36 @@ document.addEventListener("DOMContentLoaded", () => {
 function validateRegisterForm() {
   let isValid = true;
 
-  const username = document.querySelector("#username");
-  const usernameError = username.nextElementSibling;
+  const fields = [
+    { input: document.querySelector("#name"), error: document.querySelector("#name").nextElementSibling },
+    { input: document.querySelector("#lastName"), error: document.querySelector("#lastName").nextElementSibling },
+    { input: document.querySelector("#email"), error: document.querySelector("#email").nextElementSibling },
+    { input: document.querySelector("#username"), error: document.querySelector("#username").nextElementSibling },
+    { input: document.querySelector("#password"), error: document.querySelector("#password").nextElementSibling },
+    { input: document.querySelector("#password2"), error: document.querySelector("#password2").nextElementSibling }
+  ];
 
-  const email = document.querySelector("#email");
-  const emailError = email.nextElementSibling;
+  fields.forEach(field => {
+    const msg = customErrorValidationMessage(field.input);
+    field.error.textContent = msg;
+
+    if (msg !== "") {
+      field.input.classList.add("is-invalid");
+      isValid = false;
+    } else {
+      field.input.classList.remove("is-invalid");
+    }
+  });
 
   const password = document.querySelector("#password");
-  const passwordError = password.nextElementSibling;
-
   const password2 = document.querySelector("#password2");
   const password2Error = password2.nextElementSibling;
 
-  const nameInput = document.querySelector("#name");
-  const nameError = nameInput.nextElementSibling;
-
-  const lastName = document.querySelector("#lastName");
-  const lastNameError = lastName.nextElementSibling;
-
-  const usernameMsg = customErrorValidationMessage(username);
-  const emailMsg = customErrorValidationMessage(email);
-  const passwordMsg = customErrorValidationMessage(password);
-  const password2Msg = customErrorValidationMessage(password2);
-  const nameMsg = customErrorValidationMessage(nameInput);
-  const lastNameMsg = customErrorValidationMessage(lastName);
-
-  usernameError.textContent = usernameMsg;
-  emailError.textContent = emailMsg;
-  passwordError.textContent = passwordMsg;
-  password2Error.textContent = password2Msg;
-  nameError.textContent = nameMsg;
-  lastNameError.textContent = lastNameMsg;
-
-  if (password.value !== password2.value) {
+  if (password.value !== password2.value && password2.value !== "") {
     password2Error.textContent = "Las contraseñas no coinciden";
+    password2.classList.add("is-invalid");
     isValid = false;
   }
-
-  if (usernameMsg !== "") isValid = false;
-  if (emailMsg !== "") isValid = false;
-  if (passwordMsg !== "") isValid = false;
-  if (password2Msg !== "") isValid = false;
-  if (nameMsg !== "") isValid = false;
-  if (lastNameMsg !== "") isValid = false;
 
   return isValid;
 }
