@@ -54,9 +54,15 @@ unset($_SESSION['success_comment'], $_SESSION['error_comment']);
                     <strong>Estoc:</strong> <?= htmlspecialchars($product['estoc']) ?> unitats
                 </div>
 
-                <button class="btn-add-cart">
-                    Añadir al carrito
-                </button>
+                <div class="product-actions">
+                    <button class="btn-add-cart">
+                        Añadir al carrito
+                    </button>
+
+                    <button class="btn-fast-buy" title="Compra rápida">
+                        <img src="/img/img_fast-buy.png" alt="Compra rápida">
+                    </button>
+                </div>
             </div>
         </div>
 
