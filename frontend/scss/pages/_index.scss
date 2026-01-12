@@ -134,11 +134,9 @@ h2 {
   background-color: $color-card;
   border-radius: 15px;
   overflow: hidden;
-  transition: transform 0.3s;
   opacity: 1;
   margin-left: 1vh;
   margin-right: 1vh;
-  //animation: fadeIn 1s ease-out forwards;
 
   @include hover-shadow($color-accent-hover);
 
@@ -152,9 +150,20 @@ h2 {
     }
   }
 
+ &:focus-within {
+    outline: 2px solid $color-accent;
+    outline-offset: 4px;
+    @include hover-shadow($color-accent-hover);
+  }
+
   a {
     text-decoration: none;
     color: inherit;
+    display: block;
+    
+    &:focus {
+      outline: none;
+    }
 
     img {
       width: 100%;
@@ -246,7 +255,7 @@ h2 {
   // --- SECCIÓN OFFERS: scroll horizontal ---
   .offers {
     padding: 2% 0 3%;
-    overflow: hidden;
+    overflow: hidden;    
 
     .products {
       display: flex;

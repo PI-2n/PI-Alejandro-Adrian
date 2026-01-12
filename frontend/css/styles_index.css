@@ -348,7 +348,6 @@ h2 .h2offers {
   background-color: #202020;
   border-radius: 15px;
   overflow: hidden;
-  transition: transform 0.3s;
   opacity: 1;
   margin-left: 1vh;
   margin-right: 1vh;
@@ -363,9 +362,21 @@ h2 .h2offers {
 .product.show-video .product-image {
   opacity: 0.3;
 }
+.product:focus-within {
+  outline: 2px solid rgba(221, 119, 16, 0.9254901961);
+  outline-offset: 4px;
+  transition: box-shadow 0.2s;
+}
+.product:focus-within:hover {
+  box-shadow: 0 0px 1.5vh rgb(255, 165, 0);
+}
 .product a {
   text-decoration: none;
   color: inherit;
+  display: block;
+}
+.product a:focus {
+  outline: none;
 }
 .product a img {
   width: 100%;
